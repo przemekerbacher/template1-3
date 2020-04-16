@@ -1,0 +1,23 @@
+.reservation {
+  text-align: center;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  button {
+    background-color: transparent;
+    color: $menu-navigation-button-color;
+    background-color: $menu-navigation-button-background-color;
+    border: 1px solid $menu-navigation-button-color;
+    padding: $menu-navigation-button-paddings;
+    outline: none;
+    box-shadow: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin: $menu-navigation-button-margins 0;
+  }
+  button:hover {
+    color: $menu-navigation-button-active-color;
+    background-color: $menu-navigation-button-active-background-color;
+  }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- #region favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="images/fav/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="images/fav/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="images/fav/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="images/fav/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="images/fav/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="images/fav/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="images/fav/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="images/fav/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/fav/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/fav/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/fav/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="images/fav/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/fav/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="images/fav/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- #endregion -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="materialize/css/materialize.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="hamburgers/hamburgers.css" />
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <title>BEST PIZZA</title>
+  </head>
+  <body>
+    <div class="home">
+      <nav class="main-navigation">
+        <div class="container">
+          <div class="logo">
+            <a href="#">
+              <img src="images/logo.png" alt="logo" />
+            </a>
+          </div>
+          <button
+            class="button-collapsible hamburger hamburger--squeeze"
+            data-target="#nav"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+          <div class="nav">
+            <ul id="nav" class="nav-collapsible hidden">
+              <li><a href="#">home</a></li>
+              <li><a href="#">menu</a></li>
+              <li><a href="#">zamów online</a></li>
+              <li><a href="#">rezerwacja</a></li>
+              <li><a href="#">zaloguj się</a></li>
+              <li><a href="#">kontakt</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="parallax-container">
+        <header class="parallax">
+          <img src="images/background.jpg" alt="background" />
+          <div class="content">
+            <div class="container">
+              <p>
+                Prawdziwe włoskie składniki, tradycyjny piec oraz receptury to
+                prosta i najzdrowsza droga do aromatycznych dań, o głębokim i
+                wyjątkowym smaku.
+              </p>
+              <strong>
+                Zapraszamy, u nas nakarmisz wszystkie zmysły
+              </strong>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <main>
+        <div class="container">
+          <section class="menu-navigation">
+            <div class="get-to-know-our-menu">
+              <button class="collapsible" data-target="#menu">
+                Poznaj nasze menu
+              </button>
+            </div>
+            <nav class="menu-nav" id="menu">
+              <ul>
+                <li><a href="#">Przystawki</a></li>
+                <li><a href="#">Zupy</a></li>
+                <li><a href="#">Pizza</a></li>
+                <li><a href="#">Dodatki do pizzy</a></li>
+                <li><a href="#">Desery</a></li>
+                <li><a href="#">Menu dla dzieci</a></li>
+                <li><a href="#">Napoje</a></li>
+              </ul>
+            </nav>
+            <div class="order-online">
+              <button>Zamów online</button>
+            </div>
+            <div class="download-menu">
+              <a href="#">Pobierz pdf z menu</a>
+            </div>
+          </section>
+
+          <section class="reservation">
+            <h1>
+              Zarezerwuj czas dla siebie i swoich bliskich
+            </h1>
+            <form action="">
+              <div>
+                <label for="date">data</label>
+                <input type="date" name="date" id="date" />
+              </div>
+              <div class="time">
+                <span>godzina</span>
+                <div class="wrapper">
+                  <div>
+                    <label for="time-from">od</label>
+                    <input type="time" name="time-from" id="time-from" />
+                  </div>
+                  <div>
+                    <label for="time-to">do</label>
+                    <input type="time" name="time-to" id="time-to" />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="surname">ilość osób</label>
+                <input type="text" name="surname" id="surname" />
+              </div>
+              <div>
+                <label for="surname">nazwisko</label>
+                <input type="text" name="surname" id="surname" />
+              </div>
+              <div class="next">
+                <button
+                  id="reserve"
+                  class="show-modal"
+                  data-target="#hidden-form"
+                >
+                  Zarezeruj
+                </button>
+              </div>
+              <div class="modal" id="hidden-form">
+                <div class="modal-content">
+                  <div class="additional-info">
+                    <h1>Potrzebujemy jeszcze kilku informacji</h1>
+                    <div>
+                      <label for="phone">Telefon</label>
+                      <input type="text" id="phone" />
+                    </div>
+                    <div>
+                      <label for="email">Email</label>
+                      <input type="email" id="phone" />
+                    </div>
+                    <div>
+                      <label for="comments">Uwagi</label>
+                      <textarea
+                        name="comments"
+                        id="comments"
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                    </div>
+                    <div class="submit">
+                      <input type="submit" value="Zarezerwuj" />
+                    </div>
+                  </div>
+                  <span class="close">&times;</span>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer>
+        <div class="container">
+          <section class="contact">
+            <p class="phone">
+              <i class="fas fa-phone"></i><span>94 35 406 40</span>
+            </p>
+            <p class="addresss-1"><span>Głogowa 10</span></p>
+            <p class="addresss-2"><span>78-100 Kołobrzeg</span></p>
+          </section>
+          <section class="map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2336.1024978605624!2d15.54788431566943!3d54.16054798015776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4700156d2d9533ad%3A0x6d178e88f0d59922!2sS4H%20System%20-%20Producent%20oprogramowania%20dla%20gastronomii%20i%20hoteli!5e0!3m2!1sen!2spl!4v1585313903001!5m2!1sen!2spl"
+              frameborder="0"
+              style="border: 0;"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </section>
+          <section class="rights">
+            <p>&copy; 2020 Zamow.S4HONLINE</p>
+            <p>
+              Strona używa plików cookies - jeżeli ich nie akceptujesz zmień
+              ustawienia przeglądarki. Używanie systemu oznacza akceptację
+              regulaminu
+            </p>
+          </section>
+        </div>
+      </footer>
+    </div>
+    <script src="js/font-awesome-all.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>

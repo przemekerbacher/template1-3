@@ -1,0 +1,10 @@
+.home {
+  @import "variables";
+  @import "header";
+  @import "main-navigation";
+  @import "menu-navigation";
+  @import "reservation";
+  @import "footer";
+}
+
+@import "media";

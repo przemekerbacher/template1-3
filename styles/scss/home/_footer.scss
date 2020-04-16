@@ -1,0 +1,44 @@
+footer {
+  text-align: center;
+  background-color: #000;
+  padding: 20px 0;
+  color: white;
+  section {
+    margin-bottom: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+
+    svg {
+      font-size: 0.6rem;
+      margin-right: 5px;
+      vertical-align: 1px;
+    }
+  }
+
+  .map {
+    flex-grow: 1;
+  }
+
+  .rights {
+    width: 100%;
+  }
+
+  .map {
+    iframe {
+      min-width: 100%;
+      min-height: 200px;
+    }
+  }
+}

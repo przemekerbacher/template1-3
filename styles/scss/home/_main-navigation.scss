@@ -1,0 +1,91 @@
+.main-navigation {
+  z-index: 1;
+  background-color: transparent;
+  box-shadow: none;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  padding: $navigation-vertical-paddings;
+  transition: background-color 0.3s, padding 0.3s;
+  font-family: $navigation-font;
+  font-weight: bold;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .nav {
+      max-height: $navigation-max-height;
+      overflow-y: auto;
+    }
+  }
+
+  .logo {
+    width: $navigation-big-image-size;
+    transition: width 0.3s;
+    img {
+      width: 100%;
+    }
+    a {
+      padding: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 0;
+    }
+  }
+
+  a {
+    width: 100vw;
+    text-decoration: none;
+    padding: 2px;
+  }
+
+  a:hover {
+    color: cadetblue;
+  }
+
+  .button-collapsible {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    background-color: transparent;
+    font-size: 20px;
+    color: $navigation-font-color;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+
+    span.hamburger-inner,
+    span.hamburger-inner::before,
+    span.hamburger-inner::after {
+      background-color: $navigation-font-color;
+      width: 30px;
+      height: 2px;
+    }
+  }
+
+  &.active,
+  &.scroll-active {
+    background-color: black;
+
+    .logo {
+      width: $navigation-small-image-size;
+    }
+  }
+
+  &.tigh {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .logo {
+      $navigation-small-image-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.menu-navigation {
+  color: $menu-navigation-font-color;
+  padding: $menu-navigation-paddings 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $menu-navigation-font-family;
+
+  button {
+    background-color: transparent;
+    color: $menu-navigation-button-color;
+    background-color: $menu-navigation-button-background-color;
+    border: 1px solid $menu-navigation-button-color;
+    padding: $menu-navigation-button-paddings;
+    outline: none;
+    box-shadow: none;
+    transition: background-color 0.3s, color 0.3s;
+    margin: $menu-navigation-button-margins 0;
+  }
+  button:hover {
+    color: $menu-navigation-button-active-color;
+    background-color: $menu-navigation-button-active-background-color;
+  }
+
+  .menu-nav {
+    background-color: transparent;
+    box-shadow: unset;
+    height: initial;
+  }
+
+  .menu-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  li {
+    flex-basis: 40%;
+  }
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: $menu-navigation-font-color;
+    width: 100%;
+    height: 100%;
+    line-height: initial;
+    padding: $menu-navigation-button-paddings;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s;
+    background-color: transparent;
+  }
+
+  a:hover {
+    border-bottom: 1px solid $menu-navigation-font-color;
+  }
+}
