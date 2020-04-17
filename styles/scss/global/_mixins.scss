@@ -6,6 +6,7 @@
   $paddings,
   $margins
 ) {
+  text-transform: uppercase;
   color: $color;
   background-color: $background;
   border: 1px solid $color;

@@ -9,6 +9,14 @@ header {
   color: $header-font-color;
   font-size: $header-font-size;
 
+  h1 {
+    margin-bottom: $h1-margin-bottom;
+  }
+
+  h2 {
+    font-weight: bold;
+  }
+
   .parallax-container {
     height: 900px;
   }

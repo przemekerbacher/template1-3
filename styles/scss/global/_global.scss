@@ -4,7 +4,7 @@
   transition: max-height 0.2s ease-out;
 }
 
-html {
+body {
   scroll-behavior: smooth;
   font-family: $font;
 }
@@ -16,4 +16,8 @@ h4,
 h5,
 h6 {
   font-family: $font-title;
+}
+
+button {
+  font-family: $font-buttons;
 }
