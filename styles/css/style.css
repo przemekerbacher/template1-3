@@ -1,4 +1,4 @@
-@import url("../../../fonts/roboto/roboto.css");
+@import url("../../fonts/roboto/roboto.css");
 .hidden {
   max-height: 0;
   overflow: hidden;
@@ -446,7 +446,7 @@ button {
 }
 
 .home footer {
-  background-image: url("/images/footer-background.jpeg");
+  background-image: url("../../images/footer-background.jpeg");
   background-attachment: fixed;
   background-position: right;
   background-size: cover;
