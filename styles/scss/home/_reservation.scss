@@ -1,23 +1,39 @@
 .reservation {
   text-align: center;
+  padding-bottom: $section-padding;
+  button {
+    @include button(
+      $menu-navigation-button-color,
+      $menu-navigation-button-background-color,
+      $menu-navigation-button-active-color,
+      $menu-navigation-button-active-background-color,
+      $menu-navigation-button-paddings,
+      $menu-navigation-button-margins
+    );
+  }
 
   h1 {
-    margin-bottom: 50px;
+    margin-bottom: $h1-margin-bottom;
   }
 
-  button {
-    background-color: transparent;
-    color: $menu-navigation-button-color;
-    background-color: $menu-navigation-button-background-color;
-    border: 1px solid $menu-navigation-button-color;
-    padding: $menu-navigation-button-paddings;
-    outline: none;
-    box-shadow: none;
-    transition: background-color 0.3s, color 0.3s;
-    margin: $menu-navigation-button-margins 0;
+  form,
+  .additional-info {
+    max-width: 400px;
+    margin: 0 auto;
   }
-  button:hover {
-    color: $menu-navigation-button-active-color;
-    background-color: $menu-navigation-button-active-background-color;
+
+  input[type="submit"] {
+    @include button(
+      $menu-navigation-button-color,
+      $menu-navigation-button-background-color,
+      $menu-navigation-button-active-color,
+      $menu-navigation-button-active-background-color,
+      $menu-navigation-button-paddings,
+      $menu-navigation-button-margins
+    );
+  }
+
+  textarea {
+    min-height: 100px;
   }
 }

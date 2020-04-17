@@ -9,7 +9,6 @@ header {
   color: $header-font-color;
   font-size: $header-font-size;
   font-family: $header-font-family;
-  background-color: rgba(0, 0, 0, 0.5);
 
   .parallax-container {
     height: 900px;
@@ -25,7 +24,7 @@ header {
     left: 0;
     height: 100%;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
   p {

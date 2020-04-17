@@ -6,6 +6,51 @@
   transition: max-height 0.2s ease-out;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-content {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  max-width: 600px;
+  max-height: 100vh;
+  padding: 50px;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  margin: 0 auto;
+  overflow-y: auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.modal .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal .close:hover,
+.modal .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .home .parallax-container {
   height: 750px;
 }
@@ -17,7 +62,6 @@
   color: #fff;
   font-size: 30px;
   font-family: "Old Standard TT", serif;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home header .parallax-container {
@@ -41,7 +85,7 @@
   left: 0;
   height: 100%;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .home header p {
@@ -170,7 +214,6 @@
 }
 
 .home .menu-navigation button {
-  background-color: transparent;
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
@@ -180,7 +223,7 @@
           box-shadow: none;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .home .menu-navigation button:hover {
@@ -211,6 +254,11 @@
       flex-basis: 40%;
 }
 
+.home .menu-navigation p {
+  font-size: 20px;
+  text-align: center;
+}
+
 .home .menu-navigation a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,16 +286,30 @@
   border-bottom: 1px solid #000;
 }
 
-.home .reservation {
-  text-align: center;
+.home .download-our-menu .parallax {
+  max-height: 300px;
+  overflow: hidden;
 }
 
-.home .reservation h1 {
-  margin-bottom: 50px;
+.home .download-our-menu img {
+  max-width: 100%;
+}
+
+.home .download-our-menu .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home .reservation {
+  text-align: center;
+  padding-bottom: 50px;
 }
 
 .home .reservation button {
-  background-color: transparent;
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
@@ -257,12 +319,44 @@
           box-shadow: none;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
-  margin: 10px 0;
+  margin: 10px;
 }
 
 .home .reservation button:hover {
   color: #fff;
   background-color: #000;
+}
+
+.home .reservation h1 {
+  margin-bottom: 50px;
+}
+
+.home .reservation form,
+.home .reservation .additional-info {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.home .reservation input[type="submit"] {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px;
+}
+
+.home .reservation input[type="submit"]:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+.home .reservation textarea {
+  min-height: 100px;
 }
 
 .home footer {

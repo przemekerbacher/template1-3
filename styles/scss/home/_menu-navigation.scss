@@ -7,19 +7,14 @@
   font-family: $menu-navigation-font-family;
 
   button {
-    background-color: transparent;
-    color: $menu-navigation-button-color;
-    background-color: $menu-navigation-button-background-color;
-    border: 1px solid $menu-navigation-button-color;
-    padding: $menu-navigation-button-paddings;
-    outline: none;
-    box-shadow: none;
-    transition: background-color 0.3s, color 0.3s;
-    margin: $menu-navigation-button-margins 0;
-  }
-  button:hover {
-    color: $menu-navigation-button-active-color;
-    background-color: $menu-navigation-button-active-background-color;
+    @include button(
+      $menu-navigation-button-color,
+      $menu-navigation-button-background-color,
+      $menu-navigation-button-active-color,
+      $menu-navigation-button-active-background-color,
+      $menu-navigation-button-paddings,
+      $menu-navigation-button-margins
+    );
   }
 
   .menu-nav {
@@ -33,8 +28,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
   li {
     flex-basis: 40%;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
   }
 
   a {

@@ -135,8 +135,8 @@
       </div>
 
       <main>
-        <div class="container">
-          <section class="menu-navigation">
+        <div>
+          <section class="menu-navigation container">
             <div class="get-to-know-our-menu">
               <button class="collapsible" data-target="#menu">
                 Poznaj nasze menu
@@ -160,35 +160,42 @@
               <a href="#">Pobierz pdf z menu</a>
             </div>
           </section>
-
-          <section class="reservation">
+          <!-- <section class="download-our-menu">
+            <div class="parallax-container">
+              <div class="parallax">
+                <img src="images/menu.jpg" alt="menu" />
+                <div class="content"></div>
+              </div>
+            </div>
+          </section> -->
+          <section class="reservation container">
             <h1>
               Zarezerwuj czas dla siebie i swoich bliskich
             </h1>
             <form action="">
-              <div>
+              <div class="form-item">
                 <label for="date">data</label>
                 <input type="date" name="date" id="date" />
               </div>
               <div class="time">
                 <span>godzina</span>
                 <div class="wrapper">
-                  <div>
+                  <div class="form-item">
                     <label for="time-from">od</label>
                     <input type="time" name="time-from" id="time-from" />
                   </div>
-                  <div>
+                  <div class="form-item">
                     <label for="time-to">do</label>
                     <input type="time" name="time-to" id="time-to" />
                   </div>
                 </div>
               </div>
 
-              <div>
-                <label for="surname">ilość osób</label>
-                <input type="text" name="surname" id="surname" />
+              <div class="form-item">
+                <label for="people-count">ilość osób</label>
+                <input type="number" name="people-count" id="people-count" />
               </div>
-              <div>
+              <div class="form-item">
                 <label for="surname">nazwisko</label>
                 <input type="text" name="surname" id="surname" />
               </div>
@@ -198,22 +205,22 @@
                   class="show-modal"
                   data-target="#hidden-form"
                 >
-                  Zarezeruj
+                  Zarezerwuj
                 </button>
               </div>
               <div class="modal" id="hidden-form">
                 <div class="modal-content">
                   <div class="additional-info">
                     <h1>Potrzebujemy jeszcze kilku informacji</h1>
-                    <div>
+                    <div class="form-item">
                       <label for="phone">Telefon</label>
                       <input type="text" id="phone" />
                     </div>
-                    <div>
+                    <div class="form-item">
                       <label for="email">Email</label>
                       <input type="email" id="phone" />
                     </div>
-                    <div>
+                    <div class="form-item">
                       <label for="comments">Uwagi</label>
                       <textarea
                         name="comments"
