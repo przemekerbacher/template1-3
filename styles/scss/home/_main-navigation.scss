@@ -9,7 +9,6 @@
   height: auto;
   padding: $navigation-vertical-paddings;
   transition: background-color 0.3s, padding 0.3s;
-  font-family: $navigation-font;
   font-weight: bold;
 
   .container {
@@ -27,9 +26,11 @@
   .logo {
     width: $navigation-big-image-size;
     transition: width 0.3s;
+
     img {
       width: 100%;
     }
+
     a {
       padding: 0;
       display: block;
@@ -46,7 +47,7 @@
   }
 
   a:hover {
-    color: cadetblue;
+    color: $navigation-item-hover;
   }
 
   .button-collapsible {
@@ -83,9 +84,5 @@
   &.tigh {
     padding-left: 20px;
     padding-right: 20px;
-
-    .logo {
-      $navigation-small-image-size: 50px;
-    }
   }
 }

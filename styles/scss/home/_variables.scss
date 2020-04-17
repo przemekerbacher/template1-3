@@ -1,3 +1,4 @@
+//main navigation
 $navigation-font-color: #fff;
 $navigation-background-color: #000;
 $navigation-item-hover: cadetblue;
@@ -10,14 +11,15 @@ $navigation-max-height: calc(
 );
 $navigation-font: $font;
 
+//header
 $parallax-height: 750px;
 $header-font-size: 30px;
 $header-font-color: #fff;
-$header-font-family: $font3;
 $header-padding-top: calc(
   #{$navigation-big-image-size} + 2 * #{$navigation-vertical-paddings} + 50px
 );
 
+//menu navigation
 $menu-navigation-font-color: #000;
 $menu-navigation-paddings: 50px;
 $menu-navigation-font-family: $font;
@@ -28,3 +30,7 @@ $menu-navigation-button-background-color: #fff;
 $menu-navigation-button-active-color: #fff;
 $menu-navigation-button-active-background-color: #000;
 $menu-navigation-items-basis: 40%;
+
+//reservation
+$reservation-form-width: 400px;
+$reservation-text-area-height: 100px;

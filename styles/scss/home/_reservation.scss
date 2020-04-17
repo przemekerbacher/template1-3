@@ -18,7 +18,7 @@
 
   form,
   .additional-info {
-    max-width: 400px;
+    max-width: $reservation-form-width;
     margin: 0 auto;
   }
 
@@ -34,6 +34,6 @@
   }
 
   textarea {
-    min-height: 100px;
+    min-height: $reservation-text-area-height;
   }
 }
