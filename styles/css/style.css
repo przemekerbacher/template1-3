@@ -6,8 +6,11 @@
   transition: max-height 0.2s ease-out;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
   font-family: "roboto", "serif";
 }
 
@@ -87,10 +90,6 @@ button {
 
 .home header h2 {
   font-weight: bold;
-}
-
-.home header .parallax-container {
-  height: 900px;
 }
 
 .home header .content {
@@ -328,6 +327,67 @@ button {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.home .menu-card p {
+  margin: 0;
+}
+
+.home .menu-card .categories {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home .menu-card .col-1,
+.home .menu-card .col-2 {
+  min-width: 100%;
+}
+
+.home .menu-card .menu-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.home .menu-card .menu-item .info {
+  margin-right: 10px;
+}
+
+.home .menu-card .menu-item .price {
+  margin-left: auto;
+}
+
+.home .menu-card .menu-item .buy {
+  margin-left: 10px;
+}
+
+.home .menu-card .menu-item .buy button {
+  justify-self: flex-end;
+  margin-left: 10px;
+  height: 25px;
+  width: 25px;
+  border-style: none;
+  border-radius: 50%;
+  background-color: #77aa03;
+  color: white;
+  font-size: 10px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.home .menu-card .menu-items {
+  margin-bottom: 20px;
+}
+
 .home .reservation {
   text-align: center;
   padding-bottom: 50px;
@@ -386,19 +446,83 @@ button {
 }
 
 .home footer {
-  text-align: center;
-  color: white;
   background-image: url("/images/footer-background.jpeg");
   background-attachment: fixed;
   background-position: right;
   background-size: cover;
+  text-align: center;
+  color: white;
 }
 
-.home footer section {
-  margin-bottom: 50px;
+.home footer p {
+  margin: 0;
+}
+
+.home footer .wrapper {
+  padding: 50px 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .home footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home footer .container .logo {
+  width: 100px;
+  margin-bottom: 50px;
+}
+
+.home footer .container img {
+  width: 100%;
+}
+
+.home footer .container button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  margin: 20px 0;
+}
+
+.home footer .container button:hover {
+  color: white;
+  background-color: black;
+}
+
+.home footer .container .socials {
+  width: 100%;
+  font-size: 40px;
+}
+
+.home footer .container .socials svg {
+  color: white;
+}
+
+.home footer .container .socials svg:hover {
+  color: cadetblue;
+}
+
+.home footer .container .socials > *:nth-child(2) {
+  margin: 0 20px;
+}
+
+.home footer .container .info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -407,56 +531,33 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
 }
 
-.home footer .wrapper {
-  padding: 50px 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
-}
-
-.home footer .rights {
-  margin: 0;
-}
-
-.home footer .contact {
+.home footer .container .info .reservation,
+.home footer .container .info .address,
+.home footer .container .info .hours {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  margin-bottom: 20px;
 }
 
-.home footer .contact svg {
-  font-size: 0.6rem;
-  margin-right: 5px;
-  vertical-align: 1px;
+.home footer .container .info .reservation {
+  padding: 0;
 }
 
-.home footer .map {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.home footer p span {
+  margin-left: 10px;
 }
 
 .home footer .rights {
-  width: 100%;
-}
-
-.home footer .map iframe {
-  min-width: 100%;
-  min-height: 200px;
+  margin-top: 50px;
 }
 
 @media (min-width: 1024px) {
@@ -482,6 +583,16 @@ button {
     height: 100%;
     padding: 0 10px;
     background-color: transparent;
+  }
+  .home footer .container .info .reservation,
+  .home footer .container .info .address,
+  .home footer .container .info .hours {
+    margin: 0;
+    width: 30%;
+  }
+  .home .menu-card .col-1,
+  .home .menu-card .col-2 {
+    max-width: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */

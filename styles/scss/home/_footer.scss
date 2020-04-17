@@ -1,57 +1,86 @@
 footer {
-  text-align: center;
-  color: white;
   background-image: url("/images/footer-background.jpeg");
   background-attachment: fixed;
   background-position: right;
   background-size: cover;
 
-  section {
-    margin-bottom: 50px;
-  }
+  text-align: center;
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  p {
+    margin: 0;
   }
 
   .wrapper {
     padding: 50px 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
   }
 
-  .rights {
-    margin: 0;
-  }
+  color: white;
 
-  .contact {
+  .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    flex-grow: 1;
+    align-items: center;
 
-    svg {
-      font-size: 0.6rem;
-      margin-right: 5px;
-      vertical-align: 1px;
+    .logo {
+      width: 100px;
+      margin-bottom: 50px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    button {
+      @include button;
+      margin: 20px 0;
+    }
+
+    .socials {
+      width: 100%;
+      font-size: 40px;
+      svg {
+        color: white;
+      }
+
+      svg:hover {
+        color: cadetblue;
+      }
+
+      & > *:nth-child(2) {
+        margin: 0 20px;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+
+      .reservation,
+      .address,
+      .hours {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      .reservation {
+        padding: 0;
+      }
     }
   }
 
-  .map {
-    flex-grow: 1;
+  p {
+    span {
+      margin-left: 10px;
+    }
   }
 
   .rights {
-    width: 100%;
-  }
-
-  .map {
-    iframe {
-      min-width: 100%;
-      min-height: 200px;
-    }
+    margin-top: 50px;
   }
 }

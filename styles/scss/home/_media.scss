@@ -5,6 +5,7 @@
         display: none;
       }
     }
+
     #nav {
       display: flex;
       flex-direction: row;
@@ -17,6 +18,29 @@
         height: 100%;
         padding: 0 10px;
         background-color: transparent;
+      }
+    }
+
+    footer {
+      .container {
+        .info {
+          .reservation,
+          .address,
+          .hours {
+            margin: 0;
+            width: 30%;
+          }
+        }
+      }
+    }
+
+    .menu-card {
+      .categories {
+      }
+
+      .col-1,
+      .col-2 {
+        max-width: 50%;
       }
     }
   }

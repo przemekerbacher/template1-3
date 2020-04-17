@@ -1,10 +1,10 @@
 @mixin button(
-  $color,
-  $background,
-  $color-active,
-  $background-active,
-  $paddings,
-  $margins
+  $color: black,
+  $background: white,
+  $color-active: white,
+  $background-active: black,
+  $paddings: 10px 20px,
+  $margins: 10px 0
 ) {
   text-transform: uppercase;
   color: $color;

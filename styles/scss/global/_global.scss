@@ -4,8 +4,11 @@
   transition: max-height 0.2s ease-out;
 }
 
-body {
+html {
   scroll-behavior: smooth;
+}
+
+body {
   font-family: $font;
 }
 
