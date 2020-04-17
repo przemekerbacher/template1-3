@@ -2,7 +2,6 @@ $navigation-font-color: #fff;
 $navigation-background-color: #000;
 $navigation-item-hover: cadetblue;
 $navigation-vertical-paddings: 10px;
-$navigation-vertical-paddings-num: 10;
 $navigation-small-image-size: 50px;
 $navigation-small-image-num: 50;
 $navigation-big-image-size: 100px;
@@ -16,7 +15,7 @@ $header-font-size: 30px;
 $header-font-color: #fff;
 $header-font-family: $font3;
 $header-padding-top: calc(
-  #{$navigation-big-image-size} + 2 * #{$navigation-vertical-paddings} + 20px
+  #{$navigation-big-image-size} + 2 * #{$navigation-vertical-paddings} + 50px
 );
 
 $menu-navigation-font-color: #000;
