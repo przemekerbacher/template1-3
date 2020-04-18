@@ -1,5 +1,5 @@
 .main-navigation {
-  z-index: 1;
+  z-index: 2;
   background-color: transparent;
   box-shadow: none;
   text-transform: uppercase;
@@ -84,5 +84,11 @@
   &.tigh {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
   }
 }

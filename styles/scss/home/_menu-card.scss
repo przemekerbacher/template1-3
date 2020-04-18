@@ -2,22 +2,35 @@
   p {
     margin: 0;
   }
+
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
   .categories {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
+    padding: $custom-margin 0;
   }
 
-  .col-1,
-  .col-2 {
-    min-width: 100%;
+  .column-1,
+  .column-2 {
+    width: 100%;
   }
 
   .menu-item {
     display: flex;
     width: 100%;
     margin-bottom: 10px;
+    font-size: 20px;
+
+    .numer {
+      margin-right: 10px;
+    }
 
     .info {
       margin-right: 10px;
@@ -30,21 +43,53 @@
     .buy {
       margin-left: 10px;
       button {
+        position: relative;
+        top: -4px;
+
         justify-self: flex-end;
+
         margin-left: 10px;
+
         height: 25px;
         width: 25px;
+
         border-style: none;
         border-radius: 50%;
+
         background-color: #77aa03;
+
         color: white;
         font-size: 10px;
+
         transition: 0.6s;
       }
     }
   }
 
+  .categories {
+    padding-top: 0;
+  }
+
+  .category {
+    display: none;
+    animation: animatedOpacity 0.5s both reverse;
+
+    &.active {
+      display: block;
+      animation: animatedOpacity 0.5s both;
+    }
+  }
+
   .menu-items {
     margin-bottom: 20px;
+  }
+}
+
+@keyframes animatedOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

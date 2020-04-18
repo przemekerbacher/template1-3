@@ -3,7 +3,6 @@ footer {
   background-attachment: fixed;
   background-position: right;
   background-size: cover;
-
   text-align: center;
 
   p {
@@ -11,9 +10,10 @@ footer {
   }
 
   .wrapper {
-    padding: 50px 0;
+    overflow: hidden;
+    padding: $custom-margin 0;
 
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   color: white;
@@ -25,7 +25,7 @@ footer {
 
     .logo {
       width: 100px;
-      margin-bottom: 50px;
+      margin-bottom: $custom-margin;
     }
 
     img {
@@ -34,7 +34,6 @@ footer {
 
     button {
       @include button;
-      margin: 20px 0;
     }
 
     .socials {
@@ -81,6 +80,6 @@ footer {
   }
 
   .rights {
-    margin-top: 50px;
+    margin-top: $custom-margin;
   }
 }

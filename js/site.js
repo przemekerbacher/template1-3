@@ -137,3 +137,26 @@ document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".parallax");
   M.Parallax.init(elems);
 });
+
+//display-category
+var categorySelectors = document.querySelectorAll(".category-selector");
+if (categorySelectors)
+  categorySelectors.forEach((categorySelector) => {
+    categorySelector.addEventListener("click", function () {
+      const categories = document.querySelectorAll(".category");
+      const target = document.querySelector(this.getAttribute("data-target"));
+      moveActiveClass(categorySelector, categorySelectors);
+      moveActiveClass(target, categories);
+    });
+  });
+
+moveActiveClass = (selected, all) => {
+  all.forEach((element) => {
+    if (element === selected) {
+      element.classList.add("active");
+      console.log(element);
+    } else {
+      element.classList.remove("active");
+    }
+  });
+};

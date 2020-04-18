@@ -11,9 +11,6 @@ header {
 
   h1 {
     margin-bottom: $h1-margin-bottom;
-  }
-
-  h2 {
     font-weight: bold;
   }
 
@@ -27,10 +24,17 @@ header {
     left: 0;
     height: 100%;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   p {
     margin-bottom: 50px;
+  }
+
+  button {
+    @include button;
+    font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 0;
   }
 }

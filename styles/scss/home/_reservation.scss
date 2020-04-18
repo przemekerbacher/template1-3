@@ -1,6 +1,7 @@
 .reservation {
   text-align: center;
-  padding-bottom: $section-padding;
+  padding: $section-padding 0;
+
   button {
     @include button(
       $menu-navigation-button-color,
