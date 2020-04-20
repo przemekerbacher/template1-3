@@ -1,12 +1,4 @@
-const extraButton = document.querySelector(".buttons .expand");
 const addToBasketButtons = document.querySelectorAll(".add-to-basket");
-
-if (extraButton) {
-  extraButton.addEventListener("click", function () {
-    const extraMenu = document.querySelector(".buttons");
-    extraMenu.classList.toggle("active");
-  });
-}
 
 if (addToBasketButtons) {
   addToBasketButtons.forEach((button) => {
@@ -35,19 +27,22 @@ if (collasibleElements)
       );
 
       e.currentTarget.classList.toggle("active");
-
-      if (content)
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          content.classList.remove("active");
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.classList.add("active");
-        }
+      toggleDisplay(content);
     });
   });
 
-//add active class when scroll
+const toggleDisplay = (content) => {
+  if (content)
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+      content.classList.remove("active");
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      content.classList.add("active");
+    }
+};
+
+//reduce menu when scroll
 window.addEventListener("scroll", function () {
   const mainNavigation = document.querySelector(".main-navigation");
   const collapsibleButton = document.querySelector(".button-collapsible");
@@ -68,17 +63,18 @@ window.addEventListener("scroll", function () {
 //add active clas when button clicked
 const collapsibleButton = document.querySelector(".button-collapsible");
 
-collapsibleButton.addEventListener("click", function () {
-  const mainNavigation = document.querySelector(".main-navigation");
-  this.classList.toggle("is-active");
-  if (mainNavigation) {
-    if (this.classList.contains("active")) {
-      mainNavigation.classList.add("active");
-    } else {
-      mainNavigation.classList.remove("active");
+if (collapsibleButton)
+  collapsibleButton.addEventListener("click", function () {
+    const mainNavigation = document.querySelector(".main-navigation");
+    this.classList.toggle("is-active");
+    if (mainNavigation) {
+      if (this.classList.contains("active")) {
+        mainNavigation.classList.add("active");
+      } else {
+        mainNavigation.classList.remove("active");
+      }
     }
-  }
-});
+  });
 
 //
 const reservation = document.querySelector("#reserve");
@@ -154,9 +150,31 @@ moveActiveClass = (selected, all) => {
   all.forEach((element) => {
     if (element === selected) {
       element.classList.add("active");
-      console.log(element);
     } else {
       element.classList.remove("active");
     }
   });
 };
+
+//close order
+const closeButton = document.querySelector("#order .close");
+if (closeButton)
+  closeButton.addEventListener("click", function () {
+    const order = document.querySelector("#order");
+    if (order) toggleDisplay(order);
+  });
+
+let radiosDelivery = document.querySelectorAll('[name="delivery"]');
+let timeInput = document.querySelector("[name='time'");
+
+if (radiosDelivery)
+  radiosDelivery.forEach((radio) => {
+    radio.addEventListener("click", function () {
+      if (timeInput)
+        if (this.getAttribute("value") === "on-time") {
+          timeInput.classList.add("show");
+        } else {
+          timeInput.classList.remove("show");
+        }
+    });
+  });

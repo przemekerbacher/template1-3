@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <!-- <link rel="stylesheet" href="materialize/css/materialize.css"> -->
+    <title>BEST PIZZA</title>
+  </head>
+  <body>
+    <div class="order-confirm">
+      <main>
+        <div class="container text-center">
+          <section class="check">
+            <div class="check-header">
+              <h2 class="display-4 mb-3">Twoje zamówienie</h2>
+              <small class="text-muted px-5 border-top"
+                >Sprawdź swoją listę zakupów</small
+              >
+            </div>
+            <div class="check-body">
+              <div class="confirm-products">
+                <div class="product d-flex justify-content-between py-3">
+                  <p class="product-name">
+                    7UP 0,5 x <span class="product-count"></span>1
+                  </p>
+                  <p class="product-price">5.00 PLN</p>
+                </div>
+                <div class="product d-flex justify-content-between py-3">
+                  <p class="product-name">
+                    Ice Tea Lemon x <span class="product-count">1</span>
+                  </p>
+                  <p class="product-price">5.00 PLN</p>
+                </div>
+              </div>
+            </div>
+            <div class="check-footer">
+              <div class="summary text-right d-flex justify-content-between">
+                <a href="#" class="change-your-order">
+                  <i class="fas fa-chevron-left mr-2"></i>Zmień zamówienie
+                </a>
+                <p class="font-weight-bold">Razem: <span>10.00 PLN</span></p>
+              </div>
+              <div
+                class="info rounded bg-warning py-1 my-2 d-flex align-items-center justify-content-center"
+              >
+                <p class="m-0">
+                  <i class="fas fa-info-circle mr-5"></i>Ostateczny koszt
+                  dostawy zostanie wyliczony po wybraniu adresu
+                </p>
+              </div>
+            </div>
+          </section>
+          <form action="#">
+            <div class="form w-50 mx-auto">
+              <section class="delivery">
+                <div class="delivery-header">
+                  <h2 class="display-4 mb-3">Dostawa</h2>
+                  <small class="text-muted px-5 border-top"
+                    >Zmień adres dostawy</small
+                  >
+                  <div>
+                    <button><i class="fas fa-home"></i>Odbierz w lokalu</button>
+                    <button><i class="fas fa-user"></i>Zaloguj się</button>
+                  </div>
+                </div>
+                <div class="delivery-body">
+                  <div class="form-group d-flex justify-content-center">
+                    <label class="d-block w-100" for="city"
+                      >Miasto
+                      <select
+                        class="custom-select-sm form-control"
+                        name="city"
+                        id="city"
+                      >
+                        <option value="none" selected disabled>Wybierz</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div class="row justify-content-between">
+                    <div
+                      class="col-sm-6 form-group d-flex justify-content-center"
+                    >
+                      <label class="d-block w-100" for="street"
+                        >Ulica
+                        <select
+                          class="custom-select-sm form-control"
+                          name="street"
+                          id="street"
+                        >
+                          <option value="none" selected disabled
+                            >Wybierz</option
+                          >
+                        </select>
+                      </label>
+                    </div>
+                    <div
+                      class="col-sm-6 form-group d-flex justify-content-center"
+                    >
+                      <label class="d-block w-100" for="number"
+                        >Numer
+                        <input
+                          class="form-control"
+                          name="number"
+                          id="number"
+                          type="text"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group d-flex justify-content-center">
+                    <label class="d-block w-100" for="notes"
+                      >Uwagi dla dostawcy
+                      <textarea
+                        class="form-control"
+                        name="notes"
+                        id="notes"
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                    </label>
+                  </div>
+                </div>
+              </section>
+              <section class="contact">
+                <div class="contact-header">
+                  <h2 class="display-4 mb-3">Dane kontaktowe</h2>
+                  <small class="text-muted px-5 border-top"
+                    >Jak możemy się z Tobą skontaktować?</small
+                  >
+                </div>
+                <div class="contact-body">
+                  <div class="row">
+                    <div
+                      class="col-lg-6 form-group d-flex justify-content-center"
+                    >
+                      <label for="name" class="d-block w-100">
+                        Imię
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="name"
+                          id="name"
+                        />
+                      </label>
+                    </div>
+                    <div
+                      class="col-lg-6 form-group d-flex justify-content-center"
+                    >
+                      <label for="surname" class="d-block w-100">
+                        Nazwisko
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="surname"
+                          id="surname"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div
+                      class="col-lg-6 form-group d-flex justify-content-center"
+                    >
+                      <label for="phone" class="d-block w-100">
+                        Telefon
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="phone"
+                          id="phone"
+                        />
+                      </label>
+                    </div>
+                    <div
+                      class="col-lg-6 form-group d-flex justify-content-center"
+                    >
+                      <label for="email" class="d-block w-100">
+                        Email
+                        <input
+                          class="form-control"
+                          type="email"
+                          name="email"
+                          id="email"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="contact-footer text-left">
+                  <div class="form-group">
+                    <label for="create-account">
+                      Chcę założyć konto
+                      <input
+                        class="form-checkbox"
+                        type="checkbox"
+                        id="create-account"
+                        name="createAccount"
+                      />
+                    </label>
+                  </div>
+                </div>
+              </section>
+              <section class="additional">
+                <div class="additional-header">
+                  <h2 class="display-4 mb-3">Dodatkowe informacje</h2>
+                  <small class="text-muted px-5 border-top"
+                    >Metoda płatności i dowóz</small
+                  >
+                </div>
+                <div class="additional-body">
+                  <div class="row text-left">
+                    <div
+                      class="payment-methods col-sm-6 d-flex flex-column mb-2"
+                      role="group"
+                    >
+                      <label>
+                        <input
+                          type="radio"
+                          name="payment"
+                          value="transfer"
+                          checked
+                        />
+                        Szybki przelew
+                      </label>
+                      <label>
+                        <input type="radio" name="payment" value="cash" />
+                        Gotówka
+                      </label>
+                      <label>
+                        <input type="radio" name="payment" value="card" />
+                        Karta płatnicza
+                      </label>
+                    </div>
+                    <div
+                      class="delivery-options col-sm-6 d-flex flex-column"
+                      role="group"
+                    >
+                      <label>
+                        <input
+                          type="radio"
+                          name="delivery"
+                          value="now"
+                          checked
+                        />
+                        Dostawa jak najszybciej
+                      </label>
+                      <label for="delivery-time">
+                        <input
+                          class=""
+                          id="delivery-time"
+                          type="radio"
+                          name="delivery"
+                          value="on-time"
+                        />
+                        Dostawa na wybraną godzinę
+                      </label>
+                      <input class="form-control" name="time" type="time" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="confirm">
+                <div class="confirm-header">
+                  <div class="contact-header">
+                    <h2 class="display-4 mb-3">Potwierdź zamówienie</h2>
+                    <small class="text-muted px-5 border-top"
+                      >Życzymy smacznego!</small
+                    >
+                  </div>
+                </div>
+                <div class="confirm-body">
+                  <div class="form-group">
+                    <label for="privacy-policy">
+                      Akceptuję <a href="#">regulamin</a> oraz politykę
+                      prywatnosci
+                      <input
+                        class="form-checkbox"
+                        type="checkbox"
+                        name="privacyPolicy"
+                        id="privacy-policy"
+                      />
+                    </label>
+                  </div>
+                </div>
+                <div class="confirm-footer">
+                  <input
+                    class="submit"
+                    type="submit"
+                    value="Zamawiam z obowiązkiem zapłaty"
+                  />
+                  <p class="font-weight-bold">Czas oczekiwania: 30 minut</p>
+                </div>
+              </section>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+    <script src="js/site.js"></script>
+    <script src="materialize/js/materialize.min.js"></script>
+  </body>
+</html>

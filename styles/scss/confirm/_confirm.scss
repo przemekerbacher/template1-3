@@ -1,0 +1,81 @@
+@import "variables";
+
+.order-confirm {
+  padding-bottom: 3rem;
+
+  section {
+    margin: 50px 0;
+    color: $color-primary;
+
+    p {
+      color: $text-color;
+    }
+
+    label {
+      color: $text-color;
+    }
+
+    small {
+      margin-bottom: 50px;
+    }
+
+    [class$="header"] {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .check {
+    .change-your-order {
+      background-color: $color-secondary;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .info {
+      p {
+        color: white;
+      }
+    }
+  }
+
+  input[name="time"] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  input[name="time"].show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .check {
+    .check-body {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .confirm-products {
+    .product {
+      border-bottom: solid 1px rgb(222, 226, 230);
+    }
+  }
+
+  .delivery {
+    button {
+      @include button;
+      margin-top: 1rem;
+      font-size: 0.8rem;
+
+      svg {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .submit {
+    @include button;
+  }
+}

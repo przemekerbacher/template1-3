@@ -192,6 +192,7 @@ button {
   width: 100vw;
   text-decoration: none;
   padding: 2px;
+  line-height: 3em;
 }
 
 .home .main-navigation a:hover {
@@ -246,9 +247,29 @@ button {
   transition: max-height 0.2s ease-out;
 }
 
+.home .main-navigation .basket {
+  font-size: 30px;
+  padding: 0;
+  color: white;
+  background-color: transparent;
+  border-style: none;
+  margin: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.home .main-navigation .basket:hover {
+  color: cadetblue;
+  background-color: transparent;
+}
+
 .home .about {
   padding: 100px 0;
   text-align: center;
+}
+
+.home .about h2 {
+  margin-bottom: 50px;
 }
 
 .home .separator {
@@ -301,15 +322,12 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .home .menu-navigation li {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
+  max-width: 200px;
 }
 
 .home .menu-navigation p {
@@ -340,8 +358,9 @@ button {
   background-color: transparent;
 }
 
-.home .menu-navigation a:hover {
-  border-bottom: 1px solid #000;
+.home .menu-navigation a:hover,
+.home .menu-navigation a.active {
+  border-bottom: 1px solid greenyellow;
 }
 
 .home .download-our-menu .parallax {
@@ -360,6 +379,10 @@ button {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.home .menu-card {
+  margin-bottom: 50px;
 }
 
 .home .menu-card p {
@@ -384,7 +407,6 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 50px 0;
 }
 
 .home .menu-card .column-1,
@@ -411,6 +433,7 @@ button {
 
 .home .menu-card .menu-item .price {
   margin-left: auto;
+  white-space: nowrap;
 }
 
 .home .menu-card .menu-item .buy {
@@ -452,6 +475,17 @@ button {
   margin-bottom: 20px;
 }
 
+.home .menu-card .alergens button {
+  font-family: "roboto", "serif";
+  color: blue;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
 @-webkit-keyframes animatedOpacity {
   from {
     opacity: 0;
@@ -470,9 +504,162 @@ button {
   }
 }
 
+.home .order {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 0;
+  z-index: 2;
+  overflow: auto;
+}
+
+.home .order .close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  padding: 0px;
+  cursor: pointer;
+}
+
+.home .order.hidden {
+  padding: 0;
+}
+
+.home .order.active {
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 50px;
+}
+
+.home .order h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.home .order .order-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.home .order .name {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+}
+
+.home .order .times {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home .order .times svg {
+  font-size: 12px;
+}
+
+.home .order .times .count {
+  margin-left: 10px;
+}
+
+.home .order .value {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  text-align: end;
+  font-weight: bold;
+}
+
+.home .order .summary {
+  padding: 0 20px;
+  margin-top: 20px;
+  text-align: end;
+  font-weight: bold;
+}
+
+.home .order p {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.home .order .total,
+.home .order .discount {
+  border-bottom: 1px solid #ddd;
+}
+
+.home .order .total-to-pay {
+  font-size: 16px;
+}
+
+.home .order .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home .order .edit > :nth-child(2) {
+  margin-left: 10px;
+}
+
+.home .order .edit button {
+  font-size: 20px;
+  padding: 0;
+  border: none;
+  color: olivedrab;
+}
+
+.home .order .edit button:hover {
+  color: cadetblue;
+  background-color: transparent;
+}
+
+.home .order button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.home .order button:hover {
+  color: white;
+  background-color: black;
+}
+
 .home .reservation {
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .home .reservation button {
@@ -646,6 +833,9 @@ button {
   .home .main-navigation .button-collapsible {
     display: none;
   }
+  .home .main-navigation .basket {
+    display: none;
+  }
   .home #nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -685,5 +875,130 @@ button {
   .home .menu-card .column-2 {
     max-width: 100%;
   }
+  .home .ordering {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .home .ordering .order {
+    position: static;
+    max-height: initial;
+    z-index: 0;
+    padding: 0;
+    min-width: 350px;
+    width: 350px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    border-left: 1px solid #ddd;
+  }
+  .home .ordering .order .close {
+    display: none;
+  }
+  .home .ordering .menu-card {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+.order-confirm {
+  padding-bottom: 3rem;
+}
+
+.order-confirm section {
+  margin: 50px 0;
+  color: #146e2d;
+}
+
+.order-confirm section p {
+  color: #544c4c;
+}
+
+.order-confirm section label {
+  color: #544c4c;
+}
+
+.order-confirm section small {
+  margin-bottom: 50px;
+}
+
+.order-confirm section [class$="header"] {
+  margin-bottom: 2rem;
+}
+
+.order-confirm .check .change-your-order {
+  background-color: #b30908;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.order-confirm .check .info p {
+  color: white;
+}
+
+.order-confirm input[name="time"] {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.order-confirm input[name="time"].show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.order-confirm .check .check-body {
+  margin-bottom: 1rem;
+}
+
+.order-confirm .confirm-products .product {
+  border-bottom: solid 1px #dee2e6;
+}
+
+.order-confirm .delivery button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.order-confirm .delivery button:hover {
+  color: white;
+  background-color: black;
+}
+
+.order-confirm .delivery button svg {
+  margin-right: 10px;
+}
+
+.order-confirm .submit {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+}
+
+.order-confirm .submit:hover {
+  color: white;
+  background-color: black;
 }
 /*# sourceMappingURL=style.css.map */

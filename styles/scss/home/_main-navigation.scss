@@ -44,6 +44,7 @@
     width: 100vw;
     text-decoration: none;
     padding: 2px;
+    line-height: 3em;
   }
 
   a:hover {
@@ -90,5 +91,20 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+  }
+
+  .basket {
+    font-size: 30px;
+    padding: 0;
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    margin: 0;
+    box-shadow: none;
+
+    &:hover {
+      color: cadetblue;
+      background-color: transparent;
+    }
   }
 }
