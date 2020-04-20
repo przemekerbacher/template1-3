@@ -46,18 +46,14 @@ const toggleDisplay = (content) => {
 window.addEventListener("scroll", function () {
   const mainNavigation = document.querySelector(".main-navigation");
   const collapsibleButton = document.querySelector(".button-collapsible");
-
-  if (window.scrollY > 0) {
-    if (mainNavigation) {
+  if (mainNavigation)
+    if (window.scrollY > 0) {
       mainNavigation.classList.add("scroll-active");
       mainNavigation.classList.add("tigh");
-    }
-  } else {
-    {
+    } else {
       mainNavigation.classList.remove("scroll-active");
       mainNavigation.classList.remove("tigh");
     }
-  }
 });
 
 //add active clas when button clicked

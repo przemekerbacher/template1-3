@@ -181,7 +181,7 @@
           <!-- #endregion -->
 
           <!-- #region menu-navigation -->
-          <section class="menu-navigation container">
+          <section id="ordering" class="menu-navigation container">
             <nav class="menu-nav" id="menu">
               <ul>
                 <li>
@@ -1329,7 +1329,7 @@
                   Razem do zapłaty: <span>71.60 zł</span>
                 </p>
                 <div class="order-button">
-                  <button>Zamawiam</button>
+                  <a href="/confirm.html">Zamawiam</a>
                 </div>
               </div>
             </div>
@@ -1474,7 +1474,18 @@
       </footer>
       <!-- #endregion -->
     </div>
-
+    <div class="modal" id="customize-pizza">
+      <div class="modal-content">
+        <div class="additional-info">
+          <div class="size"></div>
+          <div class="actual-addons"></div>
+          <div class="meat"></div>
+          <div class="seafood"></div>
+          <div class="vegetables"></div>
+        </div>
+        <span class="close">&times;</span>
+      </div>
+    </div>
     <!-- #region scripts -->
     <script src="js/font-awesome-all.js"></script>
     <script

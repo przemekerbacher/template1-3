@@ -263,6 +263,22 @@ button {
   background-color: transparent;
 }
 
+.home .parallax-container {
+  z-index: 1;
+}
+
+.home .parallax-container button {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.home .parallax-container button:hover {
+  background-color: white;
+  color: black;
+  border-color: transparent;
+}
+
 .home .about {
   padding: 100px 0;
   text-align: center;
@@ -294,9 +310,9 @@ button {
 
 .home .menu-navigation button {
   text-transform: uppercase;
-  color: #000;
+  color: white;
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid white;
   padding: 10px 20px;
   outline: none;
   -webkit-box-shadow: none;
@@ -637,7 +653,10 @@ button {
   background-color: transparent;
 }
 
+.home .order a,
 .home .order button {
+  display: block;
+  text-align: center;
   text-transform: uppercase;
   color: black;
   background-color: white;
@@ -652,6 +671,7 @@ button {
   width: 100%;
 }
 
+.home .order a:hover,
 .home .order button:hover {
   color: white;
   background-color: black;

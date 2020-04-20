@@ -107,7 +107,10 @@
     }
   }
 
+  a,
   button {
+    display: block;
+    text-align: center;
     @include button;
     width: 100%;
   }

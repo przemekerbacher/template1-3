@@ -8,7 +8,7 @@
 
   button {
     @include button(
-      $menu-navigation-button-color,
+      white,
       $menu-navigation-button-background-color,
       $menu-navigation-button-active-color,
       $menu-navigation-button-active-background-color,
