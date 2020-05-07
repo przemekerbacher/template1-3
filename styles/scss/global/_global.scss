@@ -6,10 +6,19 @@
 
 html {
   scroll-behavior: smooth;
+  color: $font-color;
+}
+
+p {
+  margin: 0;
 }
 
 body {
   font-family: $font;
+}
+
+button {
+  outline: none !important;
 }
 
 h1,

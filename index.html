@@ -92,6 +92,52 @@
   </head>
   <body>
     <div class="home">
+
+		<div class="modal active" id="customize-pizza" style="display: block;">
+			<div class="modal-content">
+				<div class="product-details-box" data-id="ProductSetDetailsBox" data-productid="100013">
+					
+					<div class="row mt-2">
+						<div class="col-12 col-sm-6 col-md-8">
+								<div data-id="ProductDetailsBoxComponentsList" data-sizeid="3" class="product-details-box-components-list" style="display: none;">
+									<div data-id="ProductDetailsBoxComponentsListTitle" class="product-details-box-components-list-title">Podsumowanie zmian:</div>
+									<div data-id="ProductDetailsBoxComponentsListContent" class="product-details-box-components-list-content"></div>
+								</div>
+								<div data-id="ProductDetailsBoxComponentsList" data-sizeid="2" class="product-details-box-components-list" style="display: none;">
+									<div data-id="ProductDetailsBoxComponentsListTitle" class="product-details-box-components-list-title">Podsumowanie zmian:</div>
+									<div data-id="ProductDetailsBoxComponentsListContent" class="product-details-box-components-list-content"></div>
+								</div>
+								<div data-id="ProductDetailsBoxComponentsList" data-sizeid="1" class="product-details-box-components-list" style="display: none;">
+									<div data-id="ProductDetailsBoxComponentsListTitle" class="product-details-box-components-list-title">Podsumowanie zmian:</div>
+									<div data-id="ProductDetailsBoxComponentsListContent" class="product-details-box-components-list-content"></div>
+								</div>
+						</div>
+						<div class="col-12 col-sm-6 col-md-4">
+				
+							<div class="product-details-box-amount">
+								<div class="title text-center">Wybierz ilość</div>
+								<div class="btn-group" role="group" aria-label="Basic example">
+									<button type="button" class="btn btn-danger" data-id="ProductDetailsAmountMinus"><svg class="svg-inline--fa fa-minus fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-minus"></i> --></button>
+									<input class="form-control text-center" type="text" min="1" max="99" data-id="ProductDetailsAmount" value="1" readonly="" style="max-width: 3em;">
+									<button type="button" class="btn btn-success" data-id="ProductDetailsAmountPlus"><svg class="svg-inline--fa fa-plus fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg><!-- <i class="fas fa-plus"></i> --></button>
+								</div>
+							</div>
+				
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button class="cancel">Anuluj</button>
+					<button class="add">Dodaj</button>
+				</div>
+			</div>
+			
+	<script>
+		//$('#ModalProductSetDetails [data-id="ModalProductSetDetailsSaveButton"]').prop('disabled', false);
+	</script>
+	</div>
+		  </div>
+
       <!-- #region main-navigation -->
       <nav class="main-navigation">
         <div class="container">
@@ -128,15 +174,15 @@
       <!-- #region header -->
       <div class="parallax-container">
         <header class="parallax">
-          <img src="images/background.jpg" alt="background" />
+          <img src="images/bgc2.jpeg" alt="background" />
           <div class="content">
             <div class="container">
               <h1>
                 Prawdziwa włoska kuchnia
               </h1>
               <h2>
-                Piec opalany drzewem, tradycynje receptury, oraz oryginalne
-                składnieki. Prosta i zdrowa droga do aromatycznych dań.
+                Piec opalany drzewem, tradycyjne receptury, oraz oryginalne
+                składniki. Prosta i zdrowa droga do aromatycznych dań.
               </h2>
             </div>
             <div class="order-online">
@@ -175,7 +221,7 @@
           <!-- #region separator -->
           <div class="separator parallax-container">
             <div class="parallax">
-              <img src="images/background.jpg" alt="background" />
+              <img src="images/sep-1.jpg" alt="background" />
             </div>
           </div>
           <!-- #endregion -->
@@ -185,7 +231,7 @@
             <nav class="menu-nav" id="menu">
               <ul>
                 <li>
-                  <a class="category-selector active" data-target="#starters"
+                  <a class="category-selector" data-target="#starters"
                     >Przystawki</a
                   >
                 </li>
@@ -196,7 +242,9 @@
                   <a class="category-selector" data-target="#salads">Sałatki</a>
                 </li>
                 <li>
-                  <a class="category-selector" data-target="#pizzas">Pizza</a>
+                  <a class="category-selector active" data-target="#pizzas"
+                    >Pizza</a
+                  >
                 </li>
                 <li>
                   <a class="category-selector" data-target="#addons"
@@ -225,7 +273,7 @@
             <section class="menu-card">
               <div class="container">
                 <div class="categories">
-                  <div id="starters" class="category active">
+                  <div id="starters" class="category">
                     <div class="header">
                       <h2>Przystawki</h2>
                     </div>
@@ -345,7 +393,7 @@
                       </div>
                     </div>
                   </div>
-                  <div id="pizzas" class="category">
+                  <div id="pizzas" class="category active">
                     <div class="header">
                       <h2>Pizza</h2>
                     </div>
@@ -364,7 +412,13 @@
                         </div>
                         <div class="price"><span>od 16.90</span></div>
                         <div class="buy">
-                          <button class="add-to-basket">
+                          <button
+                            class="add-to-basket show-modal"
+                            data-id="1"
+                            data-name="Margherita"
+                            data-price="16.90"
+                            data-target="#customize-pizza"
+                          >
                             <i class="fas fa-plus add"></i>
                             <i class="fas fa-check ok hide"></i>
                           </button>
@@ -1229,12 +1283,8 @@
                   </div>
                 </div>
                 <div class="alergens">
-                  <div class="more">
-                    <button class="collapsible" data-target="#alergens">
-                      Lista alergenów znajduje się tutaj
-                    </button>
-                  </div>
-                  <div id="alergens" class="hidden">
+                  <div id="alergens" class="">
+                    <h3>Alergeny w produktach</h3>
                     <ul>
                       <li>
                         <p>A – dwutlenek siarki</p>
@@ -1283,53 +1333,25 @@
             <!-- #endregion -->
 
             <!-- #region order -->
-            <div id="order" class="order hidden">
-              <div class="close">
-                <i class="fas fa-times"></i>
-              </div>
-              <h3>Twoje zamówienie</h3>
-              <div class="order-items">
-                <div class="order-item">
-                  <div class="name"><span>Hawai</span></div>
-                  <div class="times">
-                    <i class="fas fa-times"></i>
-                    <div class="count"><span>2</span></div>
-                  </div>
-                  <div class="edit">
-                    <button>
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button>
-                      <i class="fas fa-times-circle"></i>
-                    </button>
-                  </div>
-                  <div class="value"><span>37.80 zł</span></div>
+            <div class="wrapper">
+              <script>
+                copySumPriceInBasketModal = () => {};
+              </script>
+              <div id="order" class="order hidden">
+                <div class="close">
+                  <i class="fas fa-times"></i>
                 </div>
-                <div class="order-item">
-                  <div class="name"><span>Margherita</span></div>
-                  <div class="times">
-                    <i class="fas fa-times"></i>
-                    <div class="count"><span>2</span></div>
+                <h3>Twoje zamówienie</h3>
+                <div class="order-items"></div>
+                <div class="summary">
+                  <p class="total">Zamówienie razem: <span>71.60 zł</span></p>
+                  <p class="discount">Rabat: <span>0.00 zł</span></p>
+                  <p class="total-to-pay">
+                    Razem do zapłaty: <span>71.60 zł</span>
+                  </p>
+                  <div class="order-button">
+                    <a href="/confirm.html">Zamawiam</a>
                   </div>
-                  <div class="edit">
-                    <button>
-                      <i class="fas fa-edit"></i>
-                    </button>
-                    <button>
-                      <i class="fas fa-times-circle"></i>
-                    </button>
-                  </div>
-                  <div class="value"><span>33.80 zł</span></div>
-                </div>
-              </div>
-              <div class="summary">
-                <p class="total">Zamówienie razem: <span>71.60 zł</span></p>
-                <p class="discount">Rabat: <span>0.00 zł</span></p>
-                <p class="total-to-pay">
-                  Razem do zapłaty: <span>71.60 zł</span>
-                </p>
-                <div class="order-button">
-                  <a href="/confirm.html">Zamawiam</a>
                 </div>
               </div>
             </div>
@@ -1341,7 +1363,7 @@
           <!-- #region separator -->
           <div class="separator parallax-container">
             <div class="parallax">
-              <img src="images/background.jpg" alt="background" />
+              <img src="images/bgc3.jpeg" alt="background" />
             </div>
           </div>
           <!-- #endregion -->
@@ -1353,7 +1375,7 @@
             </h1>
             <p>
               W celu dokonania rezerwacji prosimy o kontakt telefoniczny,
-              mailowona adres: <b>rezerwacje@alewino.pl</b> lub skorzystanie z
+              mailowo na adres: <b>rezerwacje@alewino.pl</b> lub skorzystania z
               poniższego formularza
             </p>
             <form action="">
@@ -1473,17 +1495,27 @@
         </div>
       </footer>
       <!-- #endregion -->
-    </div>
-    <div class="modal" id="customize-pizza">
-      <div class="modal-content">
-        <div class="additional-info">
-          <div class="size"></div>
-          <div class="actual-addons"></div>
-          <div class="meat"></div>
-          <div class="seafood"></div>
-          <div class="vegetables"></div>
+      <div class="modal" id="customize-pizza">
+        <div class="modal-content">
+          <div class="header">
+            <h3></h3>
+          </div>
+          <div class="customize-pizza"></div>
+          <div class="summary">
+            <p>Podusumowanie zmian:</p>
+            <span class="changes">
+              + 1 x Sos Pomidorowy Łagodny
+            </span>
+            <div class="summary-price">
+              <p>Razem: <span>100.00 zł</span></p>
+            </div>
+            <div class="buttons">
+              <button class="cancel">Anuluj</button>
+              <button class="add-to-basket">Dodaj do koszyka</button>
+            </div>
+          </div>
+          <span class="close">&times;</span>
         </div>
-        <span class="close">&times;</span>
       </div>
     </div>
     <!-- #region scripts -->
@@ -1505,6 +1537,9 @@
     ></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="materialize/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="js/serverResult.js"></script>
+    <script src="js/sticker.js"></script>
     <script src="js/site.js"></script>
     <!-- #endregion -->
   </body>

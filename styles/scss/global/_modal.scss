@@ -10,6 +10,9 @@
   max-height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 
+  opacity: 0;
+  transition: opacity 0.3s;
+
   .modal-content {
     position: relative;
     top: 50%;
@@ -40,4 +43,8 @@
     text-decoration: none;
     cursor: pointer;
   }
+}
+
+.modal.active {
+  opacity: 1;
 }

@@ -1,0 +1,51 @@
+.details {
+  padding: 10px;
+
+  .product-details-box-name {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .row:nth-child(2) .btn-group {
+    display: flex;
+    justify-content: stretch;
+    width: 100%;
+
+    label.active {
+      background-color: red;
+      color: white;
+    }
+  }
+  .card {
+    .btn-group {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .product-details-box-accordion-component-title {
+      flex-grow: 1;
+      text-align: left;
+    }
+
+    .product-details-box-accordion-component-plus {
+      flex-grow: 0;
+    }
+
+    .product-details-box-accordion-component-minus {
+      flex-grow: 0;
+    }
+  }
+  .product-details-box-amount {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    .title {
+      text-align: right !important;
+    }
+
+    .btn-group {
+      margin-left: auto;
+    }
+  }
+}

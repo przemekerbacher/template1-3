@@ -1,0 +1,75 @@
+.details {
+  padding: 10px;
+}
+
+.details .product-details-box-name {
+  font-size: 30px;
+  text-align: center;
+}
+
+.details .row:nth-child(2) .btn-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  width: 100%;
+}
+
+.details .row:nth-child(2) .btn-group label.active {
+  background-color: red;
+  color: white;
+}
+
+.details .card .btn-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.details .card .product-details-box-accordion-component-title {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: left;
+}
+
+.details .card .product-details-box-accordion-component-plus {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.details .card .product-details-box-accordion-component-minus {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+.details .product-details-box-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.details .product-details-box-amount .title {
+  text-align: right !important;
+}
+
+.details .product-details-box-amount .btn-group {
+  margin-left: auto;
+}
+/*# sourceMappingURL=details.css.map */

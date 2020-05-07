@@ -1,14 +1,18 @@
 .order {
-  position: fixed;
+  //   position: fixed !important;
   top: 0;
   left: 0;
   background-color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding: 50px 20px;
   z-index: 2;
-  overflow: auto;
+  overflow-y: auto;
+
+  .row {
+    margin: 0;
+  }
 
   .close {
     position: absolute;

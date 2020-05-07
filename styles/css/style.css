@@ -1,4 +1,4 @@
-@import url("../../fonts/roboto/roboto.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap");
 .hidden {
   max-height: 0;
   overflow: hidden;
@@ -8,10 +8,19 @@
 
 html {
   scroll-behavior: smooth;
+  color: #3f1503;
+}
+
+p {
+  margin: 0;
 }
 
 body {
   font-family: "roboto", "serif";
+}
+
+button {
+  outline: none !important;
 }
 
 h1,
@@ -20,11 +29,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "roboto-slab", "serif";
+  font-family: "roboto slab", "serif";
 }
 
 button {
-  font-family: "roboto-slab", "serif";
+  font-family: "roboto slab", "serif";
 }
 
 .modal {
@@ -38,6 +47,9 @@ button {
   height: 100vh;
   max-height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 
 .modal .modal-content {
@@ -70,6 +82,10 @@ button {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.modal.active {
+  opacity: 1;
 }
 
 .home .parallax-container {
@@ -168,6 +184,7 @@ button {
 .home .main-navigation .container .nav {
   max-height: calc( 100vh - 50px - 2 * 10px);
   overflow-y: auto;
+  margin: 0 auto;
 }
 
 .home .main-navigation .logo {
@@ -376,7 +393,7 @@ button {
 
 .home .menu-navigation a:hover,
 .home .menu-navigation a.active {
-  border-bottom: 1px solid greenyellow;
+  border-bottom: 1px solid #e25414;
 }
 
 .home .download-our-menu .parallax {
@@ -465,11 +482,15 @@ button {
   width: 25px;
   border-style: none;
   border-radius: 50%;
-  background-color: #77aa03;
+  background-color: #11760f;
   color: white;
   font-size: 10px;
   -webkit-transition: 0.6s;
   transition: 0.6s;
+}
+
+.home .menu-card .menu-item .buy button.active {
+  background-color: #b60609;
 }
 
 .home .menu-card .categories {
@@ -521,7 +542,6 @@ button {
 }
 
 .home .order {
-  position: fixed;
   top: 0;
   left: 0;
   background-color: white;
@@ -533,9 +553,13 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 50px 0;
+  padding: 50px 20px;
   z-index: 2;
-  overflow: auto;
+  overflow-y: auto;
+}
+
+.home .order .row {
+  margin: 0;
 }
 
 .home .order .close {
@@ -734,8 +758,117 @@ button {
   min-height: 100px;
 }
 
+.home #customize-pizza {
+  z-index: 10000;
+  position: fixed;
+}
+
+.home #customize-pizza .card-body .row {
+  display: block;
+}
+
+.home #customize-pizza #ProductComponentsSelectioAccordion
+.card-body
+.product-details-box-accordion-component
+* {
+  border: none;
+  font-size: 12px;
+  /* background-color: red; */
+}
+
+.home #customize-pizza #ProductComponentsSelectioAccordion .col-lg-6 {
+  max-width: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home #customize-pizza #ProductComponentsSelectioAccordion .product-details-box-accordion-component {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home #customize-pizza #ProductComponentsSelectioAccordion .col-lg-6 .btn {
+  -webkit-box-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
+}
+
+.home #customize-pizza .product-details-box-accordion-component-title {
+  -webkit-box-flex: 1 !important;
+      -ms-flex-positive: 1 !important;
+          flex-grow: 1 !important;
+  background-color: unset;
+  color: #777;
+  cursor: default;
+}
+
+.home #customize-pizza .product-details-box-size-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.home #customize-pizza .product-details-box-size-select .btn-product-details-box-size-select {
+  border-radius: 0 !important;
+  border: none !important;
+  -webkit-box-shadow: 0 !important;
+          box-shadow: 0 !important;
+}
+
+.home #customize-pizza .product-details-box-size-select .btn-product-details-box-size-select:hover,
+.home #customize-pizza .product-details-box-size-select .btn-product-details-box-size-select.active {
+  background-color: #b60609;
+  color: white;
+  outline: none;
+}
+
+.home #customize-pizza .product-details-box-name {
+  font-size: 30px;
+  font-family: "roboto slab", "serif";
+}
+
+.home #customize-pizza .btn {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: none !important;
+}
+
+.home #customize-pizza .card {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: none !important;
+}
+
+.home #customize-pizza .card .card-header {
+  background-color: transparent !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-radius: none !important;
+}
+
+.home #customize-pizza .card .card-header button {
+  text-decoration: none;
+  color: black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-family: "roboto", "serif";
+  background-color: transparent;
+}
+
+.home #customize-pizza .card .card-header button:hover {
+  text-decoration: none;
+  background-color: transparent;
+}
+
 .home footer {
-  background-image: url("../../images/footer-background.jpeg");
+  background-image: url("../../images/footer-background-compressed.jpeg");
   background-attachment: fixed;
   background-position: right;
   background-size: cover;
