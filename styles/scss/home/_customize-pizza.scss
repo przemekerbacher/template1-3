@@ -109,6 +109,8 @@
 #customize-pizza {
   z-index: 10000;
   position: fixed;
+  max-height: 100vh;
+  overflow-y: auto;
 
   .card-body .row {
     display: block;
@@ -171,6 +173,8 @@
   .card {
     box-shadow: none;
     border-radius: none !important;
+    max-height: 400px;
+    overflow-y: auto;
 
     .card-header {
       background-color: transparent !important;
@@ -186,6 +190,70 @@
       button:hover {
         text-decoration: none;
         background-color: transparent;
+      }
+    }
+  }
+
+  .modal-footer {
+    background-color: transparent;
+
+    .total {
+      width: 100%;
+    }
+  }
+
+  div.btn-group[aria-label="Basic example"] {
+    border: 1px solid #ddd;
+    padding: 0;
+
+    .btn {
+      border-radius: 0;
+    }
+
+    .btn,
+    input {
+      height: 40px;
+      width: 40px;
+    }
+
+    input {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .btn.btn-danger {
+      background-color: $color-red;
+    }
+
+    .btn.btn-success {
+      background-color: $color-green;
+    }
+  }
+
+  .modal-footer {
+    button {
+      @include button;
+    }
+
+    .cancel {
+      margin-right: 10px;
+
+      border-color: $color-red;
+      color: $color-red;
+
+      &:hover {
+        background-color: $color-red;
+        color: white;
+      }
+    }
+
+    .add {
+      border-color: $color-green;
+      color: $color-green;
+      &:hover {
+        background-color: $color-green;
+        color: white;
       }
     }
   }

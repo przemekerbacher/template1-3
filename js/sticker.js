@@ -1,4 +1,4 @@
-const sticker = ({ el1, el2, offset, container }) => {
+const sticker = ({ el1, el2, offset, container, canStick = true }) => {
   const $container = $(container);
 
   $container.scroll(() => {
@@ -6,7 +6,7 @@ const sticker = ({ el1, el2, offset, container }) => {
     const $el2 = $(el2);
     const el1Height = $el1.height();
     const el2Height = $el2.height();
-    if (el1Height > el2Height) {
+    if (el1Height > el2Height && canStick) {
       const currentScroll = $container.scrollTop() + offset;
 
       const elementIsOnScreen = (element) => {

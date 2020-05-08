@@ -2,81 +2,160 @@ const l = (m) => {
   console.log(m);
 };
 
-const addToBasketButtons = document.querySelectorAll(".add-to-basket");
+const addAddingNormalProductToBasket = () => {
+  const addToBasketButtons = document.querySelectorAll(
+    "button[data-buttontype='ButtonProductAdd']"
+  );
 
-if (addToBasketButtons) {
-  addToBasketButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const iconAdd = button.querySelector(".add");
-      const iconOk = button.querySelector(".ok");
+  if (addToBasketButtons) {
+    addToBasketButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        productAddToBasket(generateNormalBasketString($(this)));
 
-      button.classList.toggle("active");
-      if (iconAdd) iconAdd.classList.toggle("hide");
-      if (iconOk) iconOk.classList.toggle("hide");
+        // const iconAdd = button.querySelector(".add");
+        // const iconOk = button.querySelector(".ok");
+
+        // button.classList.toggle("active");
+        // if (iconAdd) iconAdd.classList.toggle("hide");
+        // if (iconOk) iconOk.classList.toggle("hide");
+      });
     });
-  });
-}
-
-//add collapsible effect
-const collasibleElements = document.querySelectorAll(
-  ".collapsible, .button-collapsible"
-);
-
-if (collasibleElements)
-  collasibleElements.forEach((element) => {
-    element.addEventListener("click", function (e) {
-      const content = document.querySelector(
-        e.currentTarget.getAttribute("data-target")
-      );
-
-      e.currentTarget.classList.toggle("active");
-      toggleDisplay(content);
-    });
-  });
-
-const toggleDisplay = (content) => {
-  if (content)
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      content.classList.remove("active");
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      content.classList.add("active");
-    }
+  }
 };
 
-//reduce menu when scroll
-window.addEventListener("scroll", function () {
-  const mainNavigation = document.querySelector(".main-navigation");
-  const collapsibleButton = document.querySelector(".button-collapsible");
-  if (mainNavigation)
-    if (window.scrollY > 0) {
-      mainNavigation.classList.add("scroll-active");
-      mainNavigation.classList.add("tigh");
-    } else {
-      mainNavigation.classList.remove("scroll-active");
-      mainNavigation.classList.remove("tigh");
-    }
-});
+const addAddingCustomizableProductToBasket = () => {
+  const modalSaveButton = document.querySelector(
+    'button[data-type="addCustomizableProduct"]'
+  );
 
-//add active clas when button clicked
-const collapsibleButton = document.querySelector(".button-collapsible");
-
-if (collapsibleButton)
-  collapsibleButton.addEventListener("click", function () {
-    const mainNavigation = document.querySelector(".main-navigation");
-    this.classList.toggle("is-active");
-    if (mainNavigation) {
-      if (this.classList.contains("active")) {
-        mainNavigation.classList.add("active");
-      } else {
-        mainNavigation.classList.remove("active");
-      }
-    }
+  modalSaveButton.addEventListener("click", () => {
+    productAddToBasket(genetateSetAddBasketString($(this)));
   });
+};
 
-//
+const addCollapsibleEffect = () => {
+  const collasipleElements = document.querySelectorAll(
+    ".collapsible, .button-collapsible"
+  );
+
+  if (collasipleElements)
+    collasipleElements.forEach((element) => {
+      element.addEventListener("click", function (e) {
+        const content = document.querySelector(
+          e.currentTarget.getAttribute("data-target")
+        );
+
+        e.currentTarget.classList.toggle("active");
+        toggleDisplay(content);
+      });
+    });
+
+  const toggleDisplay = (content) => {
+    if (content)
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove("active");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("active");
+      }
+  };
+};
+
+const addReducingMenuOnScoll = () => {
+  const reduceIfScrollBiggerThanZero = () => {
+    const mainNavigation = document.querySelector(".main-navigation");
+    if (mainNavigation)
+      if (window.scrollY > 0) {
+        mainNavigation.classList.add("scroll-active");
+        mainNavigation.classList.add("tigh");
+      } else {
+        mainNavigation.classList.remove("scroll-active");
+        mainNavigation.classList.remove("tigh");
+      }
+  };
+
+  reduceIfScrollBiggerThanZero();
+  window.addEventListener("scroll", reduceIfScrollBiggerThanZero);
+};
+
+const addPossibilityToChangePizzaAmountInModal = () => {
+  $(document).on(
+    "click",
+    '#customize-pizza [data-id="ProductDetailsAmountPlus"]',
+    function (n) {
+      n.preventDefault();
+      console.log("ProductDetailsAmountPlus");
+      var t = $('#customize-pizza [data-id="ProductDetailsAmount"]'),
+        i = parseInt(t.prop("max")),
+        r = parseInt(t.prop("min"));
+      parseInt(t.val()) < i && t.val(parseInt(t.val()) + 1);
+      copyProductSetSumPrice();
+    }
+  );
+  $(document).on(
+    "click",
+    '#customize-pizza [data-id="ProductDetailsAmountMinus"]',
+    function (n) {
+      n.preventDefault();
+      console.log("ProductDetailsAmountMinus");
+      var t = $('#customize-pizza [data-id="ProductDetailsAmount"]'),
+        r = parseInt(t.prop("max")),
+        i = parseInt(t.prop("min"));
+      parseInt(t.val()) > i && t.val(parseInt(t.val()) - 1);
+      copyProductSetSumPrice();
+    }
+  );
+};
+
+function copyProductSetSumPrice() {
+  console.log("copyProductSetSumPrice");
+  var n = $('#customize-pizza [data-id="ProductDetailsPriceValue"]').html(),
+    t = parseInt($('#customize-pizza [data-id="ProductDetailsAmount"]').val()),
+    i = n * t;
+  return (
+    $('#customize-pizza [data-id="customize-pizzaSaveButtonPrice"]').html(
+      i.toFixed(2)
+    ),
+    !0
+  );
+}
+
+function copySumPriceInBasketModal() {
+  console.log("copySumPriceInBasketModal");
+  var n = $(
+    '[data-id="ModalBasket"] [data-id="ModalBasketSumAmountValue"]'
+  ).html();
+  return (
+    typeof n == typeof undefined
+      ? $('[data-id="ModalBasket"] [data-id="ModalBasketPrice"]').html("0")
+      : $('[data-id="ModalBasket"] [data-id="ModalBasketPrice"]').html(
+          $(
+            '[data-id="ModalBasket"] [data-id="ModalBasketSumAmountValue"]'
+          ).html()
+        ),
+    !1
+  );
+}
+
+const addChangingApperienceNavigationBar = () => {
+  const collapsibleButton = document.querySelector(".button-collapsible");
+
+  if (collapsibleButton)
+    collapsibleButton.addEventListener("click", function () {
+      const mainNavigation = document.querySelector(".main-navigation");
+      this.classList.toggle("is-active");
+      if (mainNavigation) {
+        if (this.classList.contains("active")) {
+          mainNavigation.classList.add("active");
+        } else {
+          mainNavigation.classList.remove("active");
+        }
+      }
+    });
+};
+
 const reservation = document.querySelector("#reserve");
 
 if (reservation) {
@@ -101,6 +180,7 @@ if (modalButtons) {
         modal.classList.add("active");
 
         const closeModalButton = modal.querySelector(".close");
+        const dimissButtons = modal.querySelectorAll(".dimiss");
 
         const closeThisModal = () => {
           modal.style.display = "none";
@@ -124,6 +204,10 @@ if (modalButtons) {
         if (closeModalButton) {
           closeModalButton.addEventListener("click", closeThisModal);
         }
+
+        dimissButtons.forEach((dimissButton) => {
+          dimissButton.addEventListener("click", closeThisModal);
+        });
       }
     });
   });
@@ -180,19 +264,306 @@ if (radiosDelivery)
     });
   });
 
-//open pizza configurator
-var buyButtons = document.querySelectorAll(".add-to-basket");
+//////////////////////////
+const addProdutCustomizable = () => {
+  const getPriceFromSize = () => {
+    const selectedPizzaId = $(
+      ".btn-product-details-box-size-select.active input"
+    ).data("productsizesection");
+    const initPrice = $(
+      `#customize-pizza [data-sizeid="${selectedPizzaId}"] [data-id='ProductDetailsPriceValue']`
+    ).data("pricevalue");
 
-if (buyButtons)
-  buyButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const modal = document.querySelector("#customize-pizza");
-      const modalHeaderH3 = modal.querySelector(".header h3");
-      const hederData = e.currentTarget.getAttribute("data-name");
-      loadProductSetDetails(100013);
-      modalHeaderH3.innerHTML = hederData;
+    return parseFloat(initPrice);
+  };
+
+  const getPriceFromAddons = () => {
+    return 0;
+  };
+
+  const setPriceField = (value) => {
+    const priceField = $(`#customize-pizza [data-id='total-price']`);
+    priceField.html(value.toFixed(2));
+  };
+
+  const initButtons = () => {
+    const cards = $(".card-header").each((e, item) => {
+      const id = item.id;
+      const numberedId = item.id.replace("heading_", "");
+      const groupTotal = parseInt(
+        document.querySelector(
+          `#${id} [data-id="ProductDetailsBoxComponentSelectedValue"]`
+        ).innerHTML
+      );
+      const groupMax = parseInt(
+        document.querySelector(
+          `#${id} [data-id="ProductDetailsBoxComponentMaxValue"]`
+        ).innerHTML
+      );
+      const groupMin = parseInt(
+        document.querySelector(
+          `#${id} [data-id="ProductDetailsBoxComponentMinValue"]`
+        ).innerHTML
+      );
+
+      if (groupTotal >= groupMax) {
+        $(`[data-id="ProductDetailsBoxComponentAddButton"]`).attr(
+          "disabled",
+          true
+        );
+      } else if (groupTotal <= groupMin) {
+        $(`[data-id="ProductDetailsBoxComponentSubtractButton"]`).attr(
+          "disabled",
+          true
+        );
+      }
+
+      const addons = $(
+        `[data-id="ProductDetailsBoxComponentAmount"][data-componentgroupid="${numberedId}"]`
+      );
+
+      $(addons).each((i, addon) => {
+        const { maxamount, minamount, componentid } = addon.dataset;
+        const addonTotal = addon.innerHTML;
+        const addonMax = maxamount;
+        const addonMin = minamount;
+
+        if (addonTotal >= addonMax) {
+          $(
+            `button[data-componenid="${componentid}"][data-id="ProductDetailsBoxComponentAddButton"]`
+          ).attr("disabled", true);
+        } else if (addonTotal <= addonMin) {
+          $(
+            `button[data-componenid="${componentid}"][data-id="ProductDetailsBoxComponentSubtractButton"]`
+          ).attr("disabled", true);
+        }
+      });
     });
-  });
+  };
+  const initValues = () => {
+    initTotalAddonsCount();
+    initButtons();
+
+    const initPrice = getPriceFromSize();
+
+    setPriceField(initPrice);
+  };
+  const getTotalPrice = () => {
+    const priceFromSize = getPriceFromSize();
+    const priceFromAddons = getPriceFromAddons();
+
+    return priceFromSize + priceFromAddons;
+  };
+
+  const handleChangeAddonAmount = () => {
+    $(
+      '[data-id="ProductDetailsBoxComponentAddButton"], [data-id="ProductDetailsBoxComponentSubtractButton"]'
+    ).click((e) => {
+      const { id, componentgroupid, componentid } = e.currentTarget.dataset;
+      let groupMax = 0;
+      let groupMin = 0;
+      let groupTotal = 0;
+      let addonMax = 0;
+      let addonMin = 0;
+      let addonTotal = 0;
+
+      const addonTotalLabel = e.currentTarget.parentElement.querySelector(
+        `[data-componentgroupid="${componentgroupid}"]`
+      );
+
+      const groupTotalLabel = document.querySelector(
+        `#heading_${componentgroupid} [data-id="ProductDetailsBoxComponentSelectedValue"]`
+      );
+
+      let currentAddonCount = parseInt(addonTotalLabel.innerHTML);
+      let currentgroupCount = parseInt(groupTotalLabel.innerHTML);
+
+      const get = (what) => {
+        switch (what) {
+          case "total":
+            return parseInt(
+              document.querySelector(
+                `#heading_${componentgroupid} [data-id="ProductDetailsBoxComponentSelectedValue"]`
+              ).innerHTML
+            );
+          case "min":
+            return parseInt(
+              document.querySelector(
+                `#heading_${componentgroupid} [data-id="ProductDetailsBoxComponentMinValue"]`
+              ).innerHTML
+            );
+          case "max":
+            return parseInt(
+              document.querySelector(
+                `#heading_${componentgroupid} [data-id="ProductDetailsBoxComponentMaxValue"]`
+              ).innerHTML
+            );
+          case "addon total":
+            l(
+              e.currentTarget.parentElement.querySelector(
+                `span[data-componentgroupid="${componentgroupid}"]`
+              )
+            );
+            return e.currentTarget.parentElement.querySelector(
+              `span[data-componentgroupid="${componentgroupid}"]`
+            ).innerHTML;
+          case "addon min":
+            return e.currentTarget.parentElement.querySelector(
+              `[data-componentgroupid="${componentgroupid}"]`
+            ).dataset.minamount;
+          case "addon max":
+            return e.currentTarget.parentElement.querySelector(
+              `[data-componentgroupid="${componentgroupid}"]`
+            ).dataset.maxamount;
+
+          default:
+            return 0;
+        }
+      };
+      const init = () => {
+        groupTotal = parseInt(get("total"));
+        groupMax = parseInt(get("max"));
+        groupMin = parseInt(get("min"));
+        addonTotal = parseInt(get("addon total"));
+        addonMax = parseInt(get("addon max"));
+        addonMin = parseInt(get("addon min"));
+        disableButtonsIfNeed(componentgroupid);
+      };
+      const updateFields = () => {
+        if (id === "ProductDetailsBoxComponentAddButton") {
+          addonTotalLabel.innerHTML = ++addonTotal;
+          groupTotalLabel.innerHTML = ++groupTotal;
+        }
+
+        if (id === "ProductDetailsBoxComponentSubtractButton") {
+          addonTotalLabel.innerHTML = --addonTotal;
+          groupTotalLabel.innerHTML = --groupTotal;
+        }
+      };
+      const disableButtonsIfNeed = () => {
+        if (groupTotal >= groupMax) {
+          disable({ what: "ProductDetailsBoxComponentAddButton", all: true });
+        } else if (groupTotal <= groupMin) {
+          disable({
+            what: "ProductDetailsBoxComponentSubtractButton",
+            all: true,
+          });
+        } else if (addonTotal >= addonMax) {
+          disable({
+            what: "ProductDetailsBoxComponentAddButton",
+            componentgroupid,
+          });
+        } else if (addonTotal <= addonMin) {
+          disable({
+            what: "ProductDetailsBoxComponentSubtractButton",
+            componentgroupid,
+          });
+        }
+
+        $(`button[data-componentgroupid="${componentgroupid}"]`).each(
+          (i, buttonMax) => {
+            //todo
+          }
+        );
+
+        array.forEach((element) => {});
+      };
+
+      const enableAllButtons = () => {
+        $(`[data-id="ProductDetailsBoxComponentAddButton"]`).attr(
+          "disabled",
+          false
+        );
+        $(`[data-id="ProductDetailsBoxComponentSubtractButton"]`).attr(
+          "disabled",
+          false
+        );
+      };
+
+      const disable = ({ what, all = false, componentgroupid }) => {
+        if (all) {
+          switch (what) {
+            case "ProductDetailsBoxComponentAddButton":
+              $(`[data-id="${what}"]`).attr("disabled", true);
+              break;
+            case "ProductDetailsBoxComponentSubtractButton":
+              $(`[data-id="${what}"]`).attr("disabled", true);
+              break;
+          }
+        } else {
+          switch (what) {
+            case "ProductDetailsBoxComponentAddButton":
+              l(componentid);
+
+              $(`[data-componentid="${componentid}"][data-id="${what}"]`).attr(
+                "disabled",
+                true
+              );
+              break;
+            case "ProductDetailsBoxComponentSubtractButton":
+              $(`[data-componentid="${componentid}"][data-id="${what}"]`).attr(
+                "disabled",
+                true
+              );
+              break;
+          }
+        }
+      };
+      init();
+      updateFields();
+      enableAllButtons();
+      disableButtonsIfNeed();
+    });
+  };
+
+  const initTotalAddonsCount = () => {
+    const cards = $(".card-header").each((e, item) => {
+      const id = item.id;
+      const numberedId = item.id.replace("heading_", "");
+
+      let total = 0;
+
+      const addons = $(item).find(
+        `[data-id="ProductDetailsBoxComponentAmount"][data-componentgroupid="${numberedId}"]`
+      );
+
+      addons.each((i, addon) => {
+        total += parseInt(addon.val());
+      });
+
+      $(`#${id} [data-id="ProductDetailsBoxComponentSelectedValue"]`).text("0");
+    });
+  };
+
+  initValues();
+  handleChangeAddonAmount();
+};
+
+addProdutCustomizable();
+////////////////////////////
+const addPizaConfigurator = () => {
+  const initValues = () => {
+    //load price
+    const priceField = $("#customize-pizza .total-price");
+    const initPrice = $("#customize-pizza .ProductDetailsPriceValue").data(
+      "data-pricevalue"
+    );
+
+    priceField.val(initPrice);
+  };
+
+  var buyButtons = document.querySelectorAll(
+    "button[data-buttontype='ButtonProductSetChoose']"
+  );
+
+  if (buyButtons)
+    buyButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        loadProductSetDetails(button.dataset.productid);
+        initValues();
+      });
+    });
+};
 
 //display customize option
 const customizeOptions = document.querySelectorAll(".customize-option");
@@ -431,5 +802,8 @@ const addInit = () => {
 };
 
 addInit();
-
 addStickOrderDisplayWhenMenuIsDisplaying();
+addAddingNormalProductToBasket();
+addCollapsibleEffect();
+addReducingMenuOnScoll();
+addChangingApperienceNavigationBar();

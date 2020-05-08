@@ -141,6 +141,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
+  text-decoration: none;
   font-size: 12px;
   margin-top: 50px;
   margin-bottom: 0;
@@ -337,6 +338,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px;
+  text-decoration: none;
 }
 
 .home .menu-navigation button:hover {
@@ -542,6 +544,7 @@ button {
 }
 
 .home .order {
+  position: fixed;
   top: 0;
   left: 0;
   background-color: white;
@@ -692,6 +695,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
+  text-decoration: none;
   width: 100%;
 }
 
@@ -718,6 +722,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px;
+  text-decoration: none;
 }
 
 .home .reservation button:hover {
@@ -747,6 +752,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px;
+  text-decoration: none;
 }
 
 .home .reservation input[type="submit"]:hover {
@@ -761,6 +767,8 @@ button {
 .home #customize-pizza {
   z-index: 10000;
   position: fixed;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .home #customize-pizza .card-body .row {
@@ -844,6 +852,8 @@ button {
   -webkit-box-shadow: none;
           box-shadow: none;
   border-radius: none !important;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .home #customize-pizza .card .card-header {
@@ -865,6 +875,84 @@ button {
 .home #customize-pizza .card .card-header button:hover {
   text-decoration: none;
   background-color: transparent;
+}
+
+.home #customize-pizza .modal-footer {
+  background-color: transparent;
+}
+
+.home #customize-pizza .modal-footer .total {
+  width: 100%;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] {
+  border: 1px solid #ddd;
+  padding: 0;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] .btn {
+  border-radius: 0;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] .btn,
+.home #customize-pizza div.btn-group[aria-label="Basic example"] input {
+  height: 40px;
+  width: 40px;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] .btn.btn-danger {
+  background-color: #b60609;
+}
+
+.home #customize-pizza div.btn-group[aria-label="Basic example"] .btn.btn-success {
+  background-color: #11760f;
+}
+
+.home #customize-pizza .modal-footer button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.home #customize-pizza .modal-footer button:hover {
+  color: white;
+  background-color: black;
+}
+
+.home #customize-pizza .modal-footer .cancel {
+  margin-right: 10px;
+  border-color: #b60609;
+  color: #b60609;
+}
+
+.home #customize-pizza .modal-footer .cancel:hover {
+  background-color: #b60609;
+  color: white;
+}
+
+.home #customize-pizza .modal-footer .add {
+  border-color: #11760f;
+  color: #11760f;
+}
+
+.home #customize-pizza .modal-footer .add:hover {
+  background-color: #11760f;
+  color: white;
 }
 
 .home footer {
@@ -920,6 +1008,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
+  text-decoration: none;
 }
 
 .home footer .container button:hover {
@@ -1123,6 +1212,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
+  text-decoration: none;
   margin-top: 1rem;
   font-size: 0.8rem;
 }
@@ -1148,6 +1238,7 @@ button {
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
+  text-decoration: none;
 }
 
 .order-confirm .submit:hover {

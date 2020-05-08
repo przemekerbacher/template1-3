@@ -390,7 +390,7 @@ function copyProductSetSumPrice() {
   return (
     $(
       '#ModalProductSetDetails [data-id="ModalProductSetDetailsSaveButtonPrice"]'
-    ).html(i.toFixed(priceToFixedValue)),
+    ).html(i.toFixed(2)),
     !0
   );
 }
