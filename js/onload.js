@@ -31,6 +31,7 @@ function refreshHeader() {
     !1
   );
 }
+///
 function showChnageLanguage() {
   return (
     console.log("showChnageLanguage"),
@@ -70,8 +71,7 @@ function showLoginForm() {
   );
 }
 function submitLoginForm(n, t) {
-  console.log("submitLoginForm");
-  var i = $("#ModalLogin #LoginForm").serialize();
+  var i = $("#ModalLogin #loginForm").serialize();
   return (
     $.ajax({
       type: "POST",
@@ -82,7 +82,7 @@ function submitLoginForm(n, t) {
       success: function (i) {
         i.Kod > 0
           ? (showMainAlerts("success", i.Kod, i.Wiadomosc),
-            n
+            ()
               ? (console.log("location.reload"), location.reload())
               : t && refreshHeader())
           : showMainAlerts("danger", i.Kod, i.Wiadomosc);

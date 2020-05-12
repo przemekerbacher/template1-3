@@ -47,6 +47,7 @@ button {
   height: 100vh;
   max-height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 200;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -88,10 +89,6 @@ button {
   opacity: 1;
 }
 
-.home .parallax-container {
-  height: 750px;
-}
-
 .home header {
   padding: calc( 100px + 2 * 10px + 50px) 0;
   font-size: 2rem;
@@ -129,7 +126,7 @@ button {
   margin-bottom: 50px;
 }
 
-.home header button {
+.home header a {
   text-transform: uppercase;
   color: black;
   background-color: white;
@@ -142,14 +139,24 @@ button {
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
   text-decoration: none;
+  display: inline-block;
+  font-family: "roboto slab", "serif";
+  background-color: transparent;
+  color: white;
+  border-color: white;
   font-size: 12px;
   margin-top: 50px;
   margin-bottom: 0;
 }
 
-.home header button:hover {
+.home header a:hover {
   color: white;
   background-color: black;
+}
+
+.home header a:hover {
+  background-color: white;
+  color: black;
 }
 
 .home .main-navigation {
@@ -166,6 +173,14 @@ button {
   -webkit-transition: background-color 0.3s, padding 0.3s;
   transition: background-color 0.3s, padding 0.3s;
   font-weight: bold;
+}
+
+.home .main-navigation .image {
+  max-width: 30px;
+}
+
+.home .main-navigation .image img {
+  max-width: 100%;
 }
 
 .home .main-navigation .container {
@@ -186,6 +201,25 @@ button {
   max-height: calc( 100vh - 50px - 2 * 10px);
   overflow-y: auto;
   margin: 0 auto;
+}
+
+.home .main-navigation .container .nav a {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .main-navigation .container .nav svg {
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  font-size: 0.1vw;
+  margin-right: 10px;
 }
 
 .home .main-navigation .logo {
@@ -215,6 +249,10 @@ button {
 
 .home .main-navigation a:hover {
   color: cadetblue;
+}
+
+.home .main-navigation a:hover svg {
+  border: 1px solid cadetblue !important;
 }
 
 .home .main-navigation .button-collapsible {
@@ -302,12 +340,92 @@ button {
   text-align: center;
 }
 
+.home .about p {
+  margin-bottom: 20px;
+}
+
 .home .about h2 {
   margin-bottom: 50px;
 }
 
 .home .separator {
   max-height: 400px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.home .separator .text-container {
+  height: 100%;
+}
+
+.home .separator .text-container .text {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home .separator .text-container .text h1 {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.home .separator .text-container .text p {
+  font-family: "roboto slab", "serif";
+  font-size: 16px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.home .separator .text-container svg {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* set height to pixels if you want angle to change with screen width */
+}
+
+.home .separator .text-container svg polygon {
+  fill: #fbfbfb;
+}
+
+.home .separator .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.home .separator .title h3 {
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 
 .home .menu-navigation {
@@ -420,6 +538,35 @@ button {
   margin-bottom: 50px;
 }
 
+.home .menu-card #pizzas .menu-item:nth-child(1) {
+  border: 1px solid rgba(156, 156, 156, 0.4);
+  padding: 5px;
+  background-color: rgba(218, 218, 218, 0.1);
+  cursor: pointer;
+}
+
+.home .menu-card #pizzas .menu-item:nth-child(1) .buy {
+  display: none;
+}
+
+.home .menu-card #pizzas .menu-item:nth-child(1) .price {
+  color: #b60609;
+  font-weight: bold;
+  font-family: "roboto slab", "serif";
+}
+
+.home .menu-card #pizzas .menu-item:nth-child(1) .image {
+  width: 200px;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.home .menu-card #pizzas .menu-item:nth-child(1) .image img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
 .home .menu-card p {
   margin: 0;
 }
@@ -480,13 +627,13 @@ button {
   top: -4px;
   justify-self: flex-end;
   margin-left: 10px;
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 35px;
   border-style: none;
   border-radius: 50%;
   background-color: #11760f;
   color: white;
-  font-size: 10px;
+  font-size: 13px;
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
@@ -545,7 +692,7 @@ button {
 
 .home .order {
   position: fixed;
-  top: 0;
+  top: -150%;
   left: 0;
   background-color: white;
   width: 100%;
@@ -559,6 +706,12 @@ button {
   padding: 50px 20px;
   z-index: 2;
   overflow-y: auto;
+  -webkit-transition: 0.3s top;
+  transition: 0.3s top;
+}
+
+.home .order.active {
+  top: 0;
 }
 
 .home .order .row {
@@ -685,9 +838,9 @@ button {
   display: block;
   text-align: center;
   text-transform: uppercase;
-  color: black;
+  color: #11760f;
   background-color: white;
-  border: 1px solid black;
+  border: 1px solid #11760f;
   padding: 10px 20px;
   outline: none;
   -webkit-box-shadow: none;
@@ -696,72 +849,125 @@ button {
   transition: background-color 0.3s, color 0.3s;
   margin: 10px 0;
   text-decoration: none;
-  width: 100%;
 }
 
 .home .order a:hover,
 .home .order button:hover {
   color: white;
-  background-color: black;
+  background-color: #11760f;
 }
 
-.home .reservation {
+.home .order .order-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.home .order .order-test {
+  padding: 15px;
+}
+
+.home .order .order-test div,
+.home .order .order-test button {
+  all: initial;
+}
+
+.home .order .order-test .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home .order .order-test .row > * {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.home .order .order-test .my-modal-basket-product-name,
+.home .order .order-test .my-modal-basket-product-price,
+.home .order .order-test [data-id="ModalBasketProductDeleteButton"] {
+  font-family: "roboto", "serif";
+  color: #444;
+}
+
+.home .order .order-test .col-md-2 > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductAmountValue"] {
+  margin-right: 20px;
+  font-family: "roboto", "serif";
+}
+
+.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"] {
+  text-transform: uppercase;
+}
+
+.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"]:hover {
+  color: #11760f;
+  cursor: pointer;
+}
+
+.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"]:active {
+  background-color: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #11760f;
+  cursor: pointer;
+}
+
+.home .order .order-test .col-md-2 > div svg {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.home .order .order-test .col-md-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.home .order .order-test .my-modal-basket-product-price {
+  font-weight: bold;
+  color: #b60609;
+}
+
+.home .order .order-test button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home .contact-address {
   text-align: center;
-  padding: 50px 20px;
+  padding: 50px 0;
 }
 
-.home .reservation button {
-  text-transform: uppercase;
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #000;
-  padding: 10px 20px;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transition: background-color 0.3s, color 0.3s;
-  transition: background-color 0.3s, color 0.3s;
-  margin: 10px;
-  text-decoration: none;
+.home .contact-address .phone h2 {
+  margin-bottom: 30px;
 }
 
-.home .reservation button:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-.home .reservation h1 {
-  margin-bottom: 50px;
-}
-
-.home .reservation form,
-.home .reservation .additional-info {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-.home .reservation input[type="submit"] {
-  text-transform: uppercase;
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #000;
-  padding: 10px 20px;
-  outline: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  -webkit-transition: background-color 0.3s, color 0.3s;
-  transition: background-color 0.3s, color 0.3s;
-  margin: 10px;
-  text-decoration: none;
-}
-
-.home .reservation input[type="submit"]:hover {
-  color: #fff;
-  background-color: #000;
-}
-
-.home .reservation textarea {
-  min-height: 100px;
+.home .contact-address svg {
+  font-size: 30px;
 }
 
 .home #customize-pizza {
@@ -775,13 +981,22 @@ button {
   display: block;
 }
 
+.home #customize-pizza [data-id="ProductDetailsBoxComponentSubtractButton"]:focus {
+  background-color: #dc3545;
+  color: white;
+}
+
+.home #customize-pizza [data-id="ProductDetailsBoxComponentAddButton"]:focus {
+  background-color: #28a745;
+  color: white;
+}
+
 .home #customize-pizza #ProductComponentsSelectioAccordion
 .card-body
 .product-details-box-accordion-component
 * {
   border: none;
   font-size: 12px;
-  /* background-color: red; */
 }
 
 .home #customize-pizza #ProductComponentsSelectioAccordion .col-lg-6 {
@@ -883,6 +1098,16 @@ button {
 
 .home #customize-pizza .modal-footer .total {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.home #customize-pizza .modal-footer .total span {
+  margin: 0 5px;
 }
 
 .home #customize-pizza div.btn-group[aria-label="Basic example"] {
@@ -1071,12 +1296,129 @@ button {
   margin-top: 50px;
 }
 
+.home #loginForm .modal-footer {
+  background-color: transparent;
+  border: none;
+}
+
+.home #loginForm .modal-footer button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.home #loginForm .modal-footer button:hover {
+  color: white;
+  background-color: black;
+}
+
+.home #loginForm .modal-footer .cancel {
+  margin-right: 10px;
+  border-color: #b60609;
+  color: #b60609;
+}
+
+.home #loginForm .modal-footer .cancel:hover {
+  background-color: #b60609;
+  color: white;
+}
+
+.home #loginForm .modal-footer .login {
+  border-color: #11760f;
+  color: #11760f;
+}
+
+.home #loginForm .modal-footer .login:hover {
+  background-color: #11760f;
+  color: white;
+}
+
+.home #loginForm .modal-footer .restore-password {
+  width: 100%;
+  text-align: right;
+}
+
+.home #changeLanguage .modal-footer {
+  background-color: transparent;
+  border: none;
+}
+
+.home #changeLanguage .modal-footer button {
+  text-transform: uppercase;
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px 20px;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.home #changeLanguage .modal-footer button:hover {
+  color: white;
+  background-color: black;
+}
+
+.home #changeLanguage .modal-footer .cancel {
+  margin-right: 10px;
+  border-color: #b60609;
+  color: #b60609;
+}
+
+.home #changeLanguage .modal-footer .cancel:hover {
+  background-color: #b60609;
+  color: white;
+}
+
+.home #changeLanguage .modal-footer .save {
+  border-color: #11760f;
+  color: #11760f;
+}
+
+.home #changeLanguage .modal-footer .save:hover {
+  background-color: #11760f;
+  color: white;
+}
+
+.home #alergens {
+  font-style: italic;
+  color: #666;
+}
+
+.home #alergens li {
+  margin-left: 20px;
+}
+
 @media (min-width: 1024px) {
   .home .main-navigation .button-collapsible {
     display: none;
   }
   .home .main-navigation .basket {
     display: none;
+  }
+  .home .separator .text-container .text {
+    width: 40%;
+    background-color: transparent;
+  }
+  .home .separator .text-container .text p,
+  .home .separator .text-container .text h1 {
+    color: black;
+  }
+  .home .separator .text-container svg {
+    display: block;
   }
   .home #nav {
     display: -webkit-box;
@@ -1097,6 +1439,10 @@ button {
     height: 100%;
     padding: 0 10px;
     background-color: transparent;
+  }
+  .home #nav .login {
+    margin-top: 0;
+    margin-left: 20px;
   }
   .home footer .container .info .reservation,
   .home footer .container .info .address,
@@ -1126,12 +1472,13 @@ button {
     position: static;
     max-height: initial;
     z-index: 0;
-    padding: 0;
+    padding: 50px 0;
     min-width: 350px;
     width: 350px;
     margin-left: 50px;
     margin-bottom: 50px;
-    border-left: 1px solid #ddd;
+    border: 1px solid #ddd;
+    background-color: rgba(218, 218, 218, 0.1);
   }
   .home .ordering .order .close {
     display: none;
@@ -1244,5 +1591,18 @@ button {
 .order-confirm .submit:hover {
   color: white;
   background-color: black;
+}
+
+#toast-container .toast {
+  background-color: #6f5858;
+  color: white;
+}
+
+#toast-container .toast.success {
+  background-color: #45976e;
+}
+
+#toast-container .toast.error {
+  background-color: #843636;
 }
 /*# sourceMappingURL=style.css.map */

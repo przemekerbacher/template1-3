@@ -9,7 +9,20 @@
         display: none;
       }
     }
+    .separator .text-container {
+      .text {
+        width: 40%;
+        background-color: transparent;
+        p,
+        h1 {
+          color: black;
+        }
+      }
 
+      svg {
+        display: block;
+      }
+    }
     #nav {
       display: flex;
       flex-direction: row;
@@ -22,6 +35,10 @@
         height: 100%;
         padding: 0 10px;
         background-color: transparent;
+      }
+      .login {
+        margin-top: 0;
+        margin-left: 20px;
       }
     }
 
@@ -56,12 +73,13 @@
         position: static;
         max-height: initial;
         z-index: 0;
-        padding: 0;
+        padding: 50px 0;
         min-width: 350px;
         width: 350px;
         margin-left: 50px;
         margin-bottom: 50px;
-        border-left: 1px solid #ddd;
+        border: 1px solid #ddd;
+        background-color: rgba(218, 218, 218, 0.1);
 
         .close {
           display: none;

@@ -1,0 +1,30 @@
+#changeLanguage {
+  .modal-footer {
+    background-color: transparent;
+    border: none;
+    button {
+      @include button;
+    }
+
+    .cancel {
+      margin-right: 10px;
+
+      border-color: $color-red;
+      color: $color-red;
+
+      &:hover {
+        background-color: $color-red;
+        color: white;
+      }
+    }
+
+    .save {
+      border-color: $color-green;
+      color: $color-green;
+      &:hover {
+        background-color: $color-green;
+        color: white;
+      }
+    }
+  }
+}

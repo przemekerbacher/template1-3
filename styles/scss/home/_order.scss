@@ -1,6 +1,6 @@
 .order {
   position: fixed;
-  top: 0;
+  top: -150%;
   left: 0;
   background-color: white;
   width: 100%;
@@ -9,6 +9,11 @@
   padding: 50px 20px;
   z-index: 2;
   overflow-y: auto;
+  transition: 0.3s top;
+
+  &.active {
+    top: 0;
+  }
 
   .row {
     margin: 0;
@@ -115,7 +120,76 @@
   button {
     display: block;
     text-align: center;
-    @include button;
-    width: 100%;
+    @include button($color-green, white, white, $color-green);
+  }
+  .order-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .order-test {
+    padding: 15px;
+    div,
+    button {
+      all: initial;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & > * {
+        flex-grow: 1;
+      }
+    }
+
+    .my-modal-basket-product-name,
+    .my-modal-basket-product-price,
+    [data-id="ModalBasketProductDeleteButton"] {
+      font-family: $font;
+      color: #444;
+    }
+
+    .col-md-2 > div {
+      display: flex;
+      justify-content: center;
+
+      [data-id="ModalBasketProductAmountValue"] {
+        margin-right: 20px;
+        font-family: $font;
+      }
+
+      [data-id="ModalBasketProductDeleteButton"] {
+        text-transform: uppercase;
+      }
+      [data-id="ModalBasketProductDeleteButton"]:hover {
+        color: $color-green;
+        cursor: pointer;
+      }
+      [data-id="ModalBasketProductDeleteButton"]:active {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        color: $color-green;
+        cursor: pointer;
+      }
+
+      svg {
+        margin-right: 5px;
+        font-size: 20px;
+      }
+    }
+    .col-md-3 {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .my-modal-basket-product-price {
+      font-weight: bold;
+      color: $color-red;
+    }
+    button {
+      display: flex;
+    }
   }
 }

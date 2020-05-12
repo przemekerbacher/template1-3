@@ -11,6 +11,12 @@
   transition: background-color 0.3s, padding 0.3s;
   font-weight: bold;
 
+  .image {
+    max-width: 30px;
+    img {
+      max-width: 100%;
+    }
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -21,6 +27,35 @@
       max-height: $navigation-max-height;
       overflow-y: auto;
       margin: 0 auto;
+
+      //   .login {
+      //     margin-top: 20px;
+      //   }
+
+      //   .login {
+      //     a {
+      //       color: #b20908;
+      //     }
+
+      //     svg {
+      //       border-color: #b20908;
+      //     }
+      //   }
+
+      a {
+        display: flex !important;
+        align-items: center;
+      }
+
+      svg {
+        border: 1px solid white;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        font-size: 0.1vw;
+        margin-right: 10px;
+      }
     }
   }
 
@@ -50,6 +85,9 @@
 
   a:hover {
     color: $navigation-item-hover;
+    svg {
+      border: 1px solid $navigation-item-hover !important;
+    }
   }
 
   .button-collapsible {
