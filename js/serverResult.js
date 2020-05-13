@@ -32,7 +32,6 @@ function loadProductSetDetails(n) {
 }
 
 function productAddToBasket(n, source) {
-  l(source);
   const sourceHtml = $(source).html();
   $.ajax({
     type: "POST",
@@ -54,7 +53,6 @@ function productAddToBasket(n, source) {
           (document.body.style.overflow = "auto"),
           showBasketContent())
         : null;
-      l(n);
       M.toast({ html: "Dodano do koszyka", classes: "success" });
 
       $(source).html(sourceHtml);
@@ -68,6 +66,35 @@ function productAddToBasket(n, source) {
     },
   }),
     !1;
+}
+function productRemoveFromBasket(n) {
+  return (
+    $.ajax({
+      type: "POST",
+      cache: !1,
+      url: `${origin}/Zamowienie/UsunZkoszyka`,
+      data: {
+        Linijka: n,
+      },
+      beforeSend: function () {
+        M.toast({ html: "Usuwam produkt z koszyka" });
+      },
+      success: function (n) {
+        n.Kod >= 0
+          ? (M.toast({
+              html: "Usunięto produkt z koszyka",
+              classes: "success",
+            }),
+            showBasketContent())
+          : M.toast({
+              html: "Nie udało się usunąć produktu",
+              classes: "error",
+            });
+      },
+      error: function (n) {},
+    }),
+    !1
+  );
 }
 function showChnageLanguage() {
   return (
@@ -99,7 +126,6 @@ function generateNormalBasketString(n) {
     "|"
   );
 }
-
 function generateSetAddBasketString() {
   var t = $('#customize-pizza [data-id="ProductSize"]:checked'),
     r = parseInt(t.data("productsizesection")),
@@ -143,7 +169,6 @@ function generateSetAddBasketString() {
     n
   );
 }
-
 function showBasketContent() {
   return (
     $.ajax({
@@ -168,7 +193,6 @@ function showBasketContent() {
     !1
   );
 }
-
 function showLoginForm() {
   return (
     console.log("showLoginForm"),

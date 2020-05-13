@@ -1,7 +1,3 @@
-function showMainAlerts(n, t, i) {
-  M.toast({ html: "n", classes: "error" });
-}
-
 const l = (...arguments) => {
   console.log(arguments);
 };
@@ -154,82 +150,76 @@ const addChangingApperienceNavigationBar = () => {
     });
 };
 
-const reservation = document.querySelector("#reserve");
+const addModal = () => {
+  //modal
+  const modalButtons = document.querySelectorAll(".show-modal");
+  if (modalButtons) {
+    modalButtons.forEach((button) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        const modal = document.querySelector(
+          e.currentTarget.getAttribute("data-target")
+        );
 
-if (reservation) {
-  const moreInformation = document.querySelector(".hidden-form");
-  reservation.addEventListener("click", function (e) {
-    e.preventDefault();
-    moreInformation;
-  });
-}
+        if (modal) {
+          modal.classList.add("active");
 
-//modal
-const modalButtons = document.querySelectorAll(".show-modal");
-if (modalButtons) {
-  modalButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      const modal = document.querySelector(
-        e.currentTarget.getAttribute("data-target")
-      );
+          const closeModalButton = modal.querySelector(".close");
+          const dimissButtons = modal.querySelectorAll(".dimiss");
 
-      if (modal) {
-        modal.classList.add("active");
+          const closeThisModal = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          };
 
-        const closeModalButton = modal.querySelector(".close");
-        const dimissButtons = modal.querySelectorAll(".dimiss");
+          const showThisModal = () => {
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+          };
 
-        const closeThisModal = () => {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        };
+          //handle show modal
+          showThisModal();
 
-        const showThisModal = () => {
-          modal.style.display = "block";
-          document.body.style.overflow = "hidden";
-        };
-
-        //handle show modal
-        showThisModal();
-
-        //Handle close modal
-        window.addEventListener("click", function (e) {
-          if (e.target == modal) {
-            closeThisModal();
+          //Handle close modal
+          window.addEventListener("click", function (e) {
+            if (e.target == modal) {
+              closeThisModal();
+            }
+          });
+          if (closeModalButton) {
+            closeModalButton.addEventListener("click", closeThisModal);
           }
-        });
-        if (closeModalButton) {
-          closeModalButton.addEventListener("click", closeThisModal);
+
+          dimissButtons.forEach((dimissButton) => {
+            dimissButton.addEventListener("click", closeThisModal);
+          });
         }
-
-        dimissButtons.forEach((dimissButton) => {
-          dimissButton.addEventListener("click", closeThisModal);
-        });
-      }
+      });
     });
+  }
+};
+
+const addParallax = () => {
+  document.addEventListener("DOMContentLoaded", function () {
+    var elems = document.querySelectorAll(".parallax");
+    M.Parallax.init(elems);
   });
-}
+};
 
-//enable parallax
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".parallax");
-  M.Parallax.init(elems);
-});
-
-//display-category
-var categorySelectors = document.querySelectorAll(".category-selector");
-if (categorySelectors)
-  categorySelectors.forEach((categorySelector) => {
-    categorySelector.addEventListener("click", function () {
-      const categories = document.querySelectorAll(".category");
-      const target = document.querySelector(this.getAttribute("data-target"));
-      moveActiveClass(categorySelector, categorySelectors);
-      moveActiveClass(target, categories);
+const addDisplayingCategory = () => {
+  var categorySelectors = document.querySelectorAll(".category-selector");
+  if (categorySelectors)
+    categorySelectors.forEach((categorySelector) => {
+      categorySelector.addEventListener("click", function () {
+        const categories = document.querySelectorAll(".category");
+        const target = document.querySelector(this.getAttribute("data-target"));
+        moveActiveClass(categorySelector, categorySelectors);
+        moveActiveClass(target, categories);
+      });
     });
-  });
+};
 
-moveActiveClass = (selected, all) => {
+const moveActiveClass = (selected, all) => {
   all.forEach((element) => {
     if (element === selected) {
       element.classList.add("active");
@@ -239,13 +229,14 @@ moveActiveClass = (selected, all) => {
   });
 };
 
-//close order
-const closeButton = document.querySelector("#order .close");
-if (closeButton)
-  closeButton.addEventListener("click", function () {
-    const order = document.querySelector("#order");
-    if (order) order.classList.remove("active");
-  });
+const addClosingOrder = () => {
+  const closeButton = document.querySelector("#order .close");
+  if (closeButton)
+    closeButton.addEventListener("click", function () {
+      const order = document.querySelector("#order");
+      if (order) order.classList.remove("active");
+    });
+};
 
 let radiosDelivery = document.querySelectorAll('[name="delivery"]');
 let timeInput = document.querySelector("[name='time'");
@@ -275,31 +266,6 @@ const addPizaConfigurator = () => {
     });
 };
 
-//display customize option
-const customizeOptions = document.querySelectorAll(".customize-option");
-if (customizeOptions)
-  customizeOptions.forEach((customizeOption) => {
-    customizeOption.addEventListener("click", function () {
-      const contents = document.querySelectorAll(".customize-content");
-      const target = document.querySelector(this.getAttribute("data-target"));
-      moveActiveClass(customizeOption, customizeOptions);
-      moveActiveClass(target, contents);
-    });
-  });
-
-//show/hide customize pizza option
-if (customizeOptions)
-  customizeOptions.forEach((option) => {
-    option.addEventListener("click", function () {
-      const customizeContents = document.querySelectorAll(".customize-content");
-      customizeContents.forEach((content) => {
-        if (!content.classList.contains("active")) {
-          collapse(content);
-        }
-      });
-    });
-  });
-
 const expand = (content) => {
   if (content)
     if (!content.style.maxHeight) {
@@ -315,176 +281,6 @@ const collapse = (content) => {
       content.classList.remove("active");
     }
 };
-
-class AddonsGroup {
-  constructor(groupName) {
-    this.groupElement = document.querySelector(`#${groupName}`);
-    this.setCurrentItems();
-    this.fillMax();
-    this.fillMin();
-    this.fillTotal();
-    this.updateTotal();
-  }
-  items = [];
-  changes = [];
-  total = 0;
-  max = 0;
-  min = 0;
-
-  setCurrentItems = () => {
-    const addons = this.groupElement.querySelectorAll(".addon");
-
-    if (addons)
-      addons.forEach((addon) => {
-        const name = addon.querySelector(".name [data-name]").dataset.name;
-        const count = addon.querySelector(".count [data-value]").dataset.value;
-        const id = addon.id;
-
-        this.items.push({ count, name, id });
-      });
-  };
-
-  fillTotal = () => {
-    this.items.forEach((item) => {
-      this.total += parseInt(item.count);
-    });
-  };
-
-  updateTotal = () => {
-    this.groupElement.querySelector(
-      ".current-count"
-    ).dataset.value = this.total;
-  };
-
-  fillMax = () => {
-    this.max = this.groupElement.dataset.max;
-  };
-
-  fillMin = () => {
-    this.min = this.groupElement.dataset.min;
-  };
-
-  increaseValue = (targetId) => {
-    targetId = targetId.replace("#", "");
-
-    const currentItem = this.items.find((item) => item.id === targetId);
-    const targetElement = document.querySelector(`#${targetId} .count span`);
-
-    currentItem.count++;
-    targetElement.dataset.value = currentItem.count;
-    this.updateTotal();
-  };
-
-  decreaseValue = (targetId) => {
-    targetId = targetId.replace("#", "");
-
-    const currentItem = this.items.find((item) => item.id === targetId);
-    const targetElement = document.querySelector(`#${targetId} .count span`);
-
-    currentItem.count--;
-    targetElement.dataset.value = currentItem.count;
-    this.updateTotal();
-  };
-}
-
-//initialize customize groups
-const groups = document.querySelectorAll(".customize-group");
-let groupClasses = [];
-if (groups)
-  groups.forEach((group) => {
-    groupClasses.push({ group: group.id, class: new AddonsGroup(group.id) });
-  });
-
-//
-
-//handle change addon amount
-const addonButtons = document.querySelectorAll(".addons-button");
-if (addonButtons)
-  addonButtons.forEach((button) => {
-    const shouldDisable = (button) => {
-      const { group, target } = button.dataset;
-      const id = target.replace("#", "");
-
-      const currentGroup = groupClasses.find((g) => g.group === group).class;
-
-      const total = currentGroup.total;
-      const max = currentGroup.max;
-      const min = currentGroup.min;
-      const current = currentGroup.items.find((i) => i.id === id).count;
-      const operation = button.dataset.operation;
-
-      if (operation === "add") {
-        const buttonMax = button.dataset.max;
-
-        if (current === max || current === buttonMax) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-      if (operation === "remove") {
-        const buttonMin = button.dataset.min;
-        if (current === buttonMin) {
-          return true;
-        } else {
-          return false;
-        }
-      }
-    };
-
-    const toggleDisable = (button) => {
-      if (shouldDisable(button)) {
-        button.disabled = true;
-      } else {
-        button.disabled = false;
-      }
-    };
-
-    const setTargetValue = (button, operation) => {
-      const { target, group } = button.dataset;
-      const currentGroup = groupClasses.find((g) => g.group === group).class;
-
-      if (operation === "add") currentGroup.increaseValue(target);
-      if (operation === "remove") currentGroup.decreaseValue(target);
-    };
-
-    if (shouldDisable(button)) {
-      button.disabled = true;
-    } else {
-      button.disabled = false;
-    }
-
-    button.addEventListener("click", function (e) {
-      let operation = "";
-
-      addonButtons.forEach((element) => {
-        if (e.currentTarget.dataset.operation === "add") {
-          element.dataset.total++;
-          operation = "add";
-        }
-        if (e.currentTarget.dataset.operation === "remove") {
-          element.dataset.total--;
-          operation = "remove";
-        }
-      });
-
-      setTargetValue(e.currentTarget, operation);
-
-      addonButtons.forEach((element) => {
-        toggleDisable(element);
-      });
-    });
-  });
-
-//handle change pizza size
-const pizzaSizeButtons = document.querySelectorAll(".pizza-size");
-if (pizzaSizeButtons) {
-  pizzaSizeButtons.forEach((button) => {
-    button.addEventListener("click", function (e) {
-      moveActiveClass(e.currentTarget, pizzaSizeButtons);
-    });
-  });
-}
 
 const addStickOrderDisplayWhenMenuIsDisplaying = () => {
   const container = this;
@@ -523,9 +319,17 @@ const addChangeLanguage = () => {
   });
 };
 
+const addRemovingProductFromBasket = () => {
+  $('[data-id="ModalBasketProductDeleteButton"]').click((e) => {
+    const id = $(e.currentTarget).data("lineid");
+    productRemoveFromBasket(id);
+  });
+};
+
 addInit();
 addStickOrderDisplayWhenMenuIsDisplaying();
 addAddingNormalProductToBasket();
+addRemovingProductFromBasket();
 addCollapsibleEffect();
 addReducingMenuOnScoll();
 addChangingApperienceNavigationBar();
@@ -533,3 +337,7 @@ addPizaConfigurator();
 addAddingCustomizableProductToBasket();
 addLoginForm();
 addChangeLanguage();
+addModal();
+addParallax();
+addClosingOrder();
+addDisplayingCategory();

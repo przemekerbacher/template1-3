@@ -9,20 +9,6 @@
         display: none;
       }
     }
-    .separator .text-container {
-      .text {
-        width: 40%;
-        background-color: transparent;
-        p,
-        h1 {
-          color: black;
-        }
-      }
-
-      svg {
-        display: block;
-      }
-    }
     #nav {
       display: flex;
       flex-direction: row;
@@ -71,7 +57,7 @@
       display: flex;
       .order {
         position: static;
-        max-height: initial;
+        max-height: 600px;
         z-index: 0;
         padding: 50px 0;
         min-width: 350px;

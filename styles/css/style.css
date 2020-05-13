@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap");
 .hidden {
   max-height: 0;
@@ -34,6 +35,196 @@ h6 {
 
 button {
   font-family: "roboto slab", "serif";
+}
+
+.reset-this, .home .order .order-test * {
+  -webkit-animation: none;
+          animation: none;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-duration: 0;
+          animation-duration: 0;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-name: none;
+          animation-name: none;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  background: 0;
+  background-attachment: scroll;
+  background-clip: border-box;
+  background-color: transparent;
+  background-image: none;
+  background-origin: padding-box;
+  background-position: 0 0;
+  background-position-x: 0;
+  background-position-y: 0;
+  background-repeat: repeat;
+  background-size: auto auto;
+  border: 0;
+  border-style: none;
+  border-width: medium;
+  border-color: inherit;
+  border-bottom: 0;
+  border-bottom-color: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-collapse: separate;
+  -o-border-image: none;
+     border-image: none;
+  border-left: 0;
+  border-left-color: inherit;
+  border-left-style: none;
+  border-left-width: medium;
+  border-radius: 0;
+  border-right: 0;
+  border-right-color: inherit;
+  border-right-style: none;
+  border-right-width: medium;
+  border-spacing: 0;
+  border-top: 0;
+  border-top-color: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-style: none;
+  border-top-width: medium;
+  bottom: auto;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  caption-side: top;
+  clear: none;
+  clip: auto;
+  color: inherit;
+  -webkit-columns: auto;
+          columns: auto;
+  -webkit-column-count: auto;
+          column-count: auto;
+  -webkit-column-fill: balance;
+          column-fill: balance;
+  -webkit-column-gap: normal;
+          column-gap: normal;
+  -webkit-column-rule: medium none currentColor;
+          column-rule: medium none currentColor;
+  -webkit-column-rule-color: currentColor;
+          column-rule-color: currentColor;
+  -webkit-column-rule-style: none;
+          column-rule-style: none;
+  -webkit-column-rule-width: none;
+          column-rule-width: none;
+  -webkit-column-span: 1;
+          column-span: 1;
+  -webkit-column-width: auto;
+          column-width: auto;
+  content: normal;
+  counter-increment: none;
+  counter-reset: none;
+  cursor: auto;
+  direction: ltr;
+  display: inline;
+  empty-cells: show;
+  float: none;
+  font: normal;
+  font-family: inherit;
+  font-size: medium;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: auto;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
+  left: auto;
+  letter-spacing: normal;
+  line-height: normal;
+  list-style: none;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  opacity: 1;
+  orphans: 0;
+  outline: 0;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: medium;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  padding: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  page-break-after: auto;
+  page-break-before: auto;
+  page-break-inside: auto;
+  -webkit-perspective: none;
+          perspective: none;
+  -webkit-perspective-origin: 50% 50%;
+          perspective-origin: 50% 50%;
+  position: static;
+  /* May need to alter quotes for different locales (e.g fr) */
+  quotes: "“" "”" "‘" "’";
+  right: auto;
+  -moz-tab-size: 8;
+    -o-tab-size: 8;
+       tab-size: 8;
+  table-layout: auto;
+  text-align: inherit;
+  text-align-last: auto;
+  text-decoration: none;
+  -webkit-text-decoration-color: inherit;
+          text-decoration-color: inherit;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  top: auto;
+  -webkit-transform: none;
+          transform: none;
+  -webkit-transform-style: flat;
+          transform-style: flat;
+  -webkit-transition: none;
+  transition: none;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+  -webkit-transition-property: none;
+  transition-property: none;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  unicode-bidi: normal;
+  vertical-align: baseline;
+  visibility: visible;
+  white-space: normal;
+  widows: 0;
+  width: auto;
+  word-spacing: normal;
+  z-index: auto;
 }
 
 .modal {
@@ -379,7 +570,7 @@ button {
   width: 100%;
   padding: 20px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .home .separator .text-container .text h1 {
@@ -400,7 +591,6 @@ button {
   bottom: 0;
   width: 100%;
   height: 100%;
-  /* set height to pixels if you want angle to change with screen width */
 }
 
 .home .separator .text-container svg polygon {
@@ -424,7 +614,7 @@ button {
 }
 
 .home .separator .title h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
 }
 
@@ -809,6 +999,7 @@ button {
 
 .home .order .total-to-pay {
   font-size: 16px;
+  text-align: right;
 }
 
 .home .order .edit {
@@ -870,12 +1061,12 @@ button {
   padding: 15px;
 }
 
-.home .order .order-test div,
-.home .order .order-test button {
-  all: initial;
+.home .order .order-test svg {
+  height: 20px;
 }
 
 .home .order .order-test .row {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -887,57 +1078,62 @@ button {
           align-items: center;
 }
 
-.home .order .order-test .row > * {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+.home .order .order-test .row * {
+  color: #444;
+  font-family: "roboto", "serif";
 }
 
-.home .order .order-test .my-modal-basket-product-name,
-.home .order .order-test .my-modal-basket-product-price,
-.home .order .order-test [data-id="ModalBasketProductDeleteButton"] {
-  font-family: "roboto", "serif";
+.home .order .order-test .row > * {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  width: 33.33%;
+}
+
+.home .order .order-test .row button:hover {
+  background-color: transparent;
   color: #444;
 }
 
-.home .order .order-test .col-md-2 > div {
+.home .order .order-test .row .my-modal-basket-product-amount {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
-.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductAmountValue"] {
-  margin-right: 20px;
-  font-family: "roboto", "serif";
+.home .order .order-test .row .my-modal-basket-product-amount [data-id="ModalBasketProductAmountValue"] {
+  margin-right: 10px;
 }
 
-.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"] {
-  text-transform: uppercase;
-}
-
-.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"]:hover {
-  color: #11760f;
+.home .order .order-test .row [data-id="ModalBasketProductDeleteButton"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
 }
 
-.home .order .order-test .col-md-2 > div [data-id="ModalBasketProductDeleteButton"]:active {
-  background-color: transparent;
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: #11760f;
-  cursor: pointer;
-}
-
-.home .order .order-test .col-md-2 > div svg {
+.home .order .order-test .row [data-id="ModalBasketProductDeleteButton"] svg {
   margin-right: 5px;
-  font-size: 20px;
+  cursor: pointer;
 }
 
-.home .order .order-test .col-md-3 {
+.home .order .order-test .row [data-id="ModalBasketProductDeleteButton"]:hover {
+  color: #11760f;
+}
+
+.home .order .order-test .row [data-id="ModalBasketProductDeleteButton"]:hover svg path {
+  color: #11760f !important;
+}
+
+.home .order .order-test .row .my-modal-basket-product-price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -946,15 +1142,13 @@ button {
           justify-content: flex-end;
 }
 
-.home .order .order-test .my-modal-basket-product-price {
-  font-weight: bold;
+.home .order .order-test .row .my-modal-basket-product-price span {
   color: #b60609;
+  font-weight: bold;
 }
 
-.home .order .order-test button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.home .order .order-test script {
+  display: none;
 }
 
 .home .contact-address {
@@ -991,10 +1185,7 @@ button {
   color: white;
 }
 
-.home #customize-pizza #ProductComponentsSelectioAccordion
-.card-body
-.product-details-box-accordion-component
-* {
+.home #customize-pizza #ProductComponentsSelectioAccordion .card-body .product-details-box-accordion-component * {
   border: none;
   font-size: 12px;
 }
@@ -1241,6 +1432,17 @@ button {
   background-color: black;
 }
 
+.home footer .container button a {
+  color: black;
+  text-decoration: none;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.home footer .container button:hover a {
+  color: white;
+}
+
 .home footer .container .socials {
   width: 100%;
   font-size: 40px;
@@ -1409,17 +1611,6 @@ button {
   .home .main-navigation .basket {
     display: none;
   }
-  .home .separator .text-container .text {
-    width: 40%;
-    background-color: transparent;
-  }
-  .home .separator .text-container .text p,
-  .home .separator .text-container .text h1 {
-    color: black;
-  }
-  .home .separator .text-container svg {
-    display: block;
-  }
   .home #nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1470,7 +1661,7 @@ button {
   }
   .home .ordering .order {
     position: static;
-    max-height: initial;
+    max-height: 600px;
     z-index: 0;
     padding: 50px 0;
     min-width: 350px;

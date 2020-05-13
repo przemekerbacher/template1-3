@@ -94,6 +94,7 @@
 
   .total-to-pay {
     font-size: 16px;
+    text-align: right;
   }
 
   .edit {
@@ -126,70 +127,148 @@
     display: flex;
     justify-content: flex-end;
   }
+  //   .order-test {
+  //     padding: 15px;
+  //     div,
+  //     button {
+  //       all: initial;
+  //     }
+
+  //     .row {
+  //       display: flex;
+  //       justify-content: space-between;
+  //       align-items: center;
+
+  //       & > * {
+  //         flex-grow: 1;
+  //       }
+  //     }
+
+  //     .my-modal-basket-product-name,
+  //     .my-modal-basket-product-price,
+  //     [data-id="ModalBasketProductDeleteButton"] {
+  //       font-family: $font;
+  //       color: #444;
+  //     }
+
+  //     .col-md-2 > div {
+  //       display: flex;
+  //       justify-content: center;
+
+  //       [data-id="ModalBasketProductAmountValue"] {
+  //         margin-right: 20px;
+  //         font-family: $font;
+  //       }
+
+  //       [data-id="ModalBasketProductDeleteButton"] {
+  //         text-transform: uppercase;
+  //       }
+  //       [data-id="ModalBasketProductDeleteButton"]:hover {
+  //         color: $color-green;
+  //         cursor: pointer;
+  //       }
+  //       [data-id="ModalBasketProductDeleteButton"]:active {
+  //         background-color: transparent;
+  //         border: none;
+  //         box-shadow: none;
+  //         color: $color-green;
+  //         cursor: pointer;
+  //       }
+
+  //       svg {
+  //         margin-right: 5px;
+  //         font-size: 20px;
+  //       }
+  //     }
+  //     .col-md-3 {
+  //       display: flex;
+  //       justify-content: flex-end;
+  //     }
+
+  //     .my-modal-basket-product-price {
+  //       font-weight: bold;
+  //       color: $color-red;
+  //     }
+  //     button {
+  //       display: flex;
+  //     }
+  //   }
+
   .order-test {
     padding: 15px;
-    div,
-    button {
-      all: initial;
+    * {
+      @extend .reset-this;
+    }
+
+    svg {
+      height: 20px;
     }
 
     .row {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
 
-      & > * {
-        flex-grow: 1;
-      }
-    }
-
-    .my-modal-basket-product-name,
-    .my-modal-basket-product-price,
-    [data-id="ModalBasketProductDeleteButton"] {
-      font-family: $font;
-      color: #444;
-    }
-
-    .col-md-2 > div {
-      display: flex;
-      justify-content: center;
-
-      [data-id="ModalBasketProductAmountValue"] {
-        margin-right: 20px;
+      * {
+        color: #444;
         font-family: $font;
       }
 
-      [data-id="ModalBasketProductDeleteButton"] {
-        text-transform: uppercase;
+      & > * {
+        flex: 0 1 auto;
+        width: 33.33%;
       }
-      [data-id="ModalBasketProductDeleteButton"]:hover {
-        color: $color-green;
-        cursor: pointer;
-      }
-      [data-id="ModalBasketProductDeleteButton"]:active {
+
+      button:hover {
         background-color: transparent;
-        border: none;
-        box-shadow: none;
-        color: $color-green;
+        color: #444;
+      }
+
+      .my-modal-basket-product-amount {
+        flex-grow: 2;
+        display: flex;
+        flex-wrap: nowrap;
+
+        [data-id="ModalBasketProductAmountValue"] {
+          margin-right: 10px;
+        }
+      }
+
+      [data-id="ModalBasketProductDeleteButton"] {
+        display: flex;
+        align-items: center;
         cursor: pointer;
+
+        svg {
+          margin-right: 5px;
+          cursor: pointer;
+        }
+
+        &:hover {
+          color: $color-green;
+
+          svg {
+            path {
+              color: $color-green !important;
+            }
+          }
+        }
       }
 
-      svg {
-        margin-right: 5px;
-        font-size: 20px;
+      .my-modal-basket-product-price {
+        display: flex;
+        justify-content: flex-end;
+
+        span {
+          color: $color-red;
+          font-weight: bold;
+        }
       }
     }
-    .col-md-3 {
-      display: flex;
-      justify-content: flex-end;
-    }
 
-    .my-modal-basket-product-price {
-      font-weight: bold;
-      color: $color-red;
-    }
-    button {
-      display: flex;
+    script {
+      display: none;
     }
   }
 }
